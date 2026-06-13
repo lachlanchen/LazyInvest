@@ -29,6 +29,7 @@ DEFAULT_MATRIX = ROOT_DIR / "US_Sector_Investment_Matrix_2026-06-13.md"
 DEFAULT_TIMEOUT_SECONDS = 180
 RESEARCH_TIMEOUT_SECONDS = 60 * 45
 DEFAULT_STOCK_TABLE = ROOT_DIR / "US_Stock_Research_Table_2026-06-13.md"
+DEFAULT_BEST_CHOICE = ROOT_DIR / "US_Best_Growth_Choice_2026-06-13.md"
 
 
 DEFAULT_SETTINGS: dict[str, Any] = {
@@ -44,6 +45,9 @@ DEFAULT_SETTINGS: dict[str, Any] = {
     "stock_table": {
         "source": "US_Stock_Research_Table_2026-06-13.md",
         "heading": "Maintained Stock Table",
+    },
+    "best_choice": {
+        "source": "US_Best_Growth_Choice_2026-06-13.md",
     },
 }
 
@@ -146,6 +150,10 @@ def stock_table_path() -> Path:
     return configured_repo_path("stock_table", DEFAULT_STOCK_TABLE)
 
 
+def best_choice_path() -> Path:
+    return configured_repo_path("best_choice", DEFAULT_BEST_CHOICE)
+
+
 def split_markdown_row(line: str) -> list[str]:
     stripped = line.strip()
     if stripped.startswith("|"):
@@ -215,6 +223,44 @@ def stock_table_snapshot() -> dict[str, Any]:
     return markdown_table_snapshot(stock_table_path(), heading)
 
 
+def table_rows_to_mapping(table: dict[str, Any], key_name: str = "Field", value_name: str = "Value") -> dict[str, str]:
+    mapping: dict[str, str] = {}
+    for row in table.get("rows", []):
+        key = str(row.get(key_name) or "").strip()
+        if key:
+            mapping[key] = str(row.get(value_name) or "").strip()
+    return mapping
+
+
+def best_choice_snapshot() -> dict[str, Any]:
+    path = best_choice_path()
+    text = read_text(path)
+    decision_table = extract_table(text, heading="Decision Snapshot")
+    evidence_table = extract_table(text, heading="Evidence and Proof")
+    comparison_table = extract_table(text, heading="Comparison Screen")
+    risk_table = extract_table(text, heading="Key Risks")
+    decision = table_rows_to_mapping(decision_table)
+    ticker = normalize_ticker(decision.get("Ticker", ""))
+    try:
+        stat = path.stat()
+        mtime = datetime.fromtimestamp(stat.st_mtime, timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+        size = stat.st_size
+    except FileNotFoundError:
+        mtime = ""
+        size = 0
+    return {
+        "source": str(path.relative_to(ROOT_DIR)),
+        "ticker": ticker,
+        "decision": decision,
+        "evidence": evidence_table,
+        "comparison": comparison_table,
+        "risks": risk_table,
+        "updated_at": now_iso(),
+        "mtime": mtime,
+        "size": size,
+    }
+
+
 def normalize_ticker(value: str) -> str:
     match = re.search(r"`?([A-Z][A-Z0-9.]{0,9})`?", value or "")
     return match.group(1) if match else ""
@@ -274,6 +320,7 @@ def stock_details_snapshot() -> dict[str, Any]:
             "company": row.get("Company", ""),
             "category": row.get("Category", ""),
             "bucket": row.get("Bucket", ""),
+            "selection": row.get("Selection", ""),
             "why": row.get("Why It Matters", ""),
             "evidence": row.get("Evidence Snapshot", ""),
             "risks": row.get("Main Risks", ""),
@@ -354,6 +401,18 @@ def compact_stock_table_for_prompt() -> str:
     return "\n".join(lines)
 
 
+def compact_best_choice_for_prompt() -> str:
+    choice = best_choice_snapshot()
+    decision = choice.get("decision", {})
+    if not decision:
+        return "Current LazyInvest single best huge-growth choice: not set."
+    lines = ["Current LazyInvest single best huge-growth choice:"]
+    for key in ("Ticker", "Company", "Selection", "Thesis", "Why Single Best"):
+        if decision.get(key):
+            lines.append(f"- {key}: {decision[key]}")
+    return "\n".join(lines)
+
+
 def run_codex(prompt_text: str, selected_profile: dict[str, str], output_path: Path, *, read_only: bool, timeout: int) -> dict[str, Any]:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     cmd = [
@@ -419,6 +478,7 @@ def chat_reply(session_id: str, user_message: str) -> dict[str, Any]:
             read_text(CHAT_PROMPT_PATH),
             compact_table_for_prompt(),
             compact_stock_table_for_prompt(),
+            compact_best_choice_for_prompt(),
             "Recent chat history:",
             history,
             "Reply to the latest user message.",
@@ -476,6 +536,7 @@ def start_research_job(instruction: str) -> dict[str, Any]:
                 "Current table snapshot:",
                 compact_table_for_prompt(),
                 compact_stock_table_for_prompt(),
+                compact_best_choice_for_prompt(),
                 "User request:",
                 instruction,
             ]
@@ -615,12 +676,15 @@ INDEX_HTML = r"""<!doctype html>
     th:first-child { z-index: 3; }
     tbody tr:nth-child(even) td { background: #fbfcf8; }
     tbody tr:hover td { background: #eef8f6; }
+    tbody tr.best-choice-row td { background: #fff3cf !important; border-bottom-color: #e5c46b; }
+    tbody tr.best-choice-row td:first-child { box-shadow: inset 4px 0 0 #d97706; }
     code, .ticker { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
     .ticker {
       color: #0c6966; font-weight: 800; border: 1px solid transparent; background: #e8f6f4;
       border-radius: 6px; padding: 1px 5px; cursor: pointer; line-height: 1.5;
     }
     .ticker:hover, .ticker:focus { border-color: #7ac4be; outline: 0; box-shadow: 0 0 0 3px rgba(14,165,160,.12); }
+    .ticker.best-choice-ticker { background: #f59e0b; color: #211300; border-color: #b45309; }
     td a { color: #075f5c; font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 2px; }
     .jobs { border-top: 1px solid var(--line); max-height: 220px; overflow: auto; background: #fbfcf8; }
     .job { padding: 10px 14px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; font-size: 12px; }
@@ -654,6 +718,25 @@ INDEX_HTML = r"""<!doctype html>
     }
     .ticker-tip strong { display: block; font-size: 13px; margin-bottom: 5px; }
     .ticker-tip .muted { color: #c9d4cf; }
+    .best-choice-panel { display: none; padding: 16px; min-width: 0; }
+    .best-hero {
+      display: grid; gap: 12px; border: 1px solid #e3c568; background: #fff8df;
+      border-radius: 8px; padding: 15px; box-shadow: inset 4px 0 0 #d97706;
+    }
+    .best-hero h3 { margin: 0; font-size: 18px; }
+    .best-badge {
+      display: inline-flex; align-items: center; width: fit-content; min-height: 28px;
+      padding: 0 9px; border-radius: 999px; background: #d97706; color: white;
+      font-size: 11px; font-weight: 850; letter-spacing: .02em;
+    }
+    .evidence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .evidence-card {
+      border: 1px solid var(--line); border-radius: 8px; background: white; padding: 10px;
+      display: grid; gap: 6px; font-size: 12px; line-height: 1.4;
+    }
+    .evidence-card strong { color: #3a2a05; }
+    .mini-table { width: 100%; border-collapse: collapse; min-width: 0; font-size: 12px; }
+    .mini-table th, .mini-table td { position: static; background: white; padding: 8px; border: 1px solid var(--line); }
     @media (max-width: 980px) {
       .shell { grid-template-columns: 1fr; }
       .pane { min-height: 70vh; }
@@ -662,6 +745,7 @@ INDEX_HTML = r"""<!doctype html>
       .setting-row { grid-template-columns: 1fr; }
       .toolbar { grid-template-columns: 1fr; }
       .detail-grid { grid-template-columns: 1fr; }
+      .evidence-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -713,6 +797,7 @@ INDEX_HTML = r"""<!doctype html>
           <div class="tabs" aria-label="Canvas view">
             <button class="tab active" data-canvas="sector" id="sectorTab">Sectors</button>
             <button class="tab" data-canvas="stocks" id="stocksTab">Stocks</button>
+            <button class="tab" data-canvas="best" id="bestTab">Best Pick</button>
           </div>
           <input class="search" id="filterInput" placeholder="Filter sectors, tickers, or risk notes" />
           <div class="row">
@@ -721,6 +806,7 @@ INDEX_HTML = r"""<!doctype html>
         </div>
         <div class="table-wrap">
           <table id="sectorTable"></table>
+          <div class="best-choice-panel" id="bestChoicePanel"></div>
         </div>
         <div class="stock-detail" id="stockDetail"></div>
         <div class="jobs" id="jobs"></div>
@@ -748,6 +834,7 @@ INDEX_HTML = r"""<!doctype html>
       table: null,
       stockTable: null,
       stockDetails: {},
+      bestChoice: null,
       settings: null,
       polling: new Set(),
       canvas: localStorage.lazyinvestCanvas || "sector",
@@ -791,7 +878,15 @@ INDEX_HTML = r"""<!doctype html>
       document.getElementById("researchProfile").textContent = `research: ${p.research?.model || "gpt-5.5"} / ${p.research?.reasoning || "xhigh"}`;
     }
     function currentTable() {
+      if (state.canvas === "best") return null;
       return state.canvas === "stocks" ? state.stockTable : state.table;
+    }
+    function bestChoiceTicker() {
+      return state.bestChoice?.ticker || normalizeTicker(state.bestChoice?.decision?.Ticker || "");
+    }
+    function normalizeTicker(value) {
+      const match = String(value || "").match(/`?([A-Z][A-Z0-9.]{0,9})`?/);
+      return match ? match[1] : "";
     }
     function renderCanvasTabs() {
       document.querySelectorAll("[data-canvas]").forEach(btn => {
@@ -799,15 +894,27 @@ INDEX_HTML = r"""<!doctype html>
       });
       const link = document.getElementById("openCurrentFile");
       const table = currentTable();
-      if (table?.source) {
+      if (state.canvas === "best" && state.bestChoice?.source) {
+        link.href = "/file/" + state.bestChoice.source;
+        link.textContent = "Open Best Pick";
+      } else if (table?.source) {
         link.href = "/file/" + table.source;
         link.textContent = state.canvas === "stocks" ? "Open Stocks" : "Open Matrix";
       }
     }
     function renderTable() {
+      renderCanvasTabs();
+      if (state.canvas === "best") {
+        renderBestChoice();
+        renderStockDetail(bestChoiceTicker());
+        return;
+      }
       const table = currentTable();
       const el = document.getElementById("sectorTable");
+      const panel = document.getElementById("bestChoicePanel");
       const meta = document.getElementById("tableMeta");
+      el.style.display = "table";
+      panel.style.display = "none";
       if (!table || !table.headers?.length) {
         el.innerHTML = "<tbody><tr><td>No table found.</td></tr></tbody>";
         meta.textContent = "no table";
@@ -818,14 +925,18 @@ INDEX_HTML = r"""<!doctype html>
       const needle = document.getElementById("filterInput").value.trim().toLowerCase();
       const rows = table.rows.filter(row => JSON.stringify(row).toLowerCase().includes(needle));
       const thead = `<thead><tr>${table.headers.map(h => `<th>${escapeHtml(h)}</th>`).join("")}</tr></thead>`;
-      const tbody = rows.map(row => `<tr>${table.headers.map(h => `<td>${formatCell(row[h] || "", h)}</td>`).join("")}</tr>`).join("");
+      const tbody = rows.map(row => `<tr class="${isBestChoiceRow(row) ? "best-choice-row" : ""}">${table.headers.map(h => `<td>${formatCell(row[h] || "", h)}</td>`).join("")}</tr>`).join("");
       el.innerHTML = thead + `<tbody>${tbody}</tbody>`;
-      renderCanvasTabs();
       renderStockDetail(state.selectedTicker);
+    }
+    function isBestChoiceRow(row) {
+      const symbol = normalizeTicker(row?.Ticker || "");
+      return symbol && symbol === bestChoiceTicker();
     }
     function tickerButton(symbol) {
       const safe = escapeHtml(symbol);
-      return `<button type="button" class="ticker" data-ticker="${safe}">${safe}</button>`;
+      const klass = symbol === bestChoiceTicker() ? "ticker best-choice-ticker" : "ticker";
+      return `<button type="button" class="${klass}" data-ticker="${safe}">${safe}</button>`;
     }
     function formatCell(value, header = "") {
       let text = escapeHtml(value);
@@ -860,6 +971,7 @@ INDEX_HTML = r"""<!doctype html>
       }
       const title = `${escapeHtml(symbol)}${detail.company ? " · " + escapeHtml(detail.company) : ""}`;
       const boxes = [
+        ["Selection", detail.selection],
         ["Bucket", detail.bucket],
         ["Category", detail.category],
         ["Why It Matters", detail.why],
@@ -883,6 +995,54 @@ INDEX_HTML = r"""<!doctype html>
         </div>
         ${detail.source ? `<div class="detail-box"><strong>Primary Source</strong>${formatCell(detail.source)}</div>` : ""}
       `;
+    }
+    function renderBestChoice() {
+      const tableEl = document.getElementById("sectorTable");
+      const panel = document.getElementById("bestChoicePanel");
+      const meta = document.getElementById("tableMeta");
+      tableEl.style.display = "none";
+      panel.style.display = "block";
+      const choice = state.bestChoice || {};
+      const decision = choice.decision || {};
+      const ticker = bestChoiceTicker();
+      meta.textContent = choice.source ? `${choice.source} · ${ticker || "best pick"}` : "best pick";
+      if (!ticker) {
+        panel.innerHTML = '<div class="muted">No single best choice has been annotated yet.</div>';
+        return;
+      }
+      const evidenceRows = choice.evidence?.rows || [];
+      const comparisonRows = choice.comparison?.rows || [];
+      const riskRows = choice.risks?.rows || [];
+      panel.innerHTML = `
+        <div class="best-hero">
+          <span class="best-badge">${escapeHtml(decision.Selection || "BEST HUGE-GROWTH CHOICE")}</span>
+          <h3>${tickerButton(ticker)} ${escapeHtml(decision.Company || "")}</h3>
+          <div>${formatCell(decision.Thesis || "")}</div>
+          <div class="detail-box"><strong>Why Single Best</strong>${formatCell(decision["Why Single Best"] || "")}</div>
+          <div class="evidence-grid">
+            ${evidenceRows.map(row => `
+              <div class="evidence-card">
+                <strong>${formatCell(row.Evidence || "")}</strong>
+                <div>${formatCell(row["Why It Matters"] || "")}</div>
+                <div>${formatCell(row.Source || "")}</div>
+              </div>
+            `).join("")}
+          </div>
+          <div class="detail-box">
+            <strong>Comparison Screen</strong>
+            ${renderMiniTable(comparisonRows)}
+          </div>
+          <div class="detail-box">
+            <strong>Risk Controls</strong>
+            ${renderMiniTable(riskRows)}
+          </div>
+        </div>
+      `;
+    }
+    function renderMiniTable(rows) {
+      if (!rows || !rows.length) return '<span class="muted">No rows.</span>';
+      const headers = Object.keys(rows[0]);
+      return `<table class="mini-table"><thead><tr>${headers.map(h => `<th>${escapeHtml(h)}</th>`).join("")}</tr></thead><tbody>${rows.map(row => `<tr>${headers.map(h => `<td>${formatCell(row[h] || "")}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
     }
     function showTickerTip(symbol, target) {
       const tip = document.getElementById("tickerTip");
@@ -929,6 +1089,7 @@ INDEX_HTML = r"""<!doctype html>
       state.table = data.table;
       state.stockTable = data.stock_table;
       state.stockDetails = data.stock_details?.items || {};
+      state.bestChoice = data.best_choice;
       renderProfiles();
       renderMessages(data.messages);
       renderTable();
@@ -1105,6 +1266,7 @@ class LazyInvestHandler(BaseHTTPRequestHandler):
                         "table": table_snapshot(),
                         "stock_table": stock_table_snapshot(),
                         "stock_details": stock_details_snapshot(),
+                        "best_choice": best_choice_snapshot(),
                         "files": research_files(),
                         "messages": load_messages(session_id),
                         "jobs": recent_jobs(),
@@ -1116,6 +1278,9 @@ class LazyInvestHandler(BaseHTTPRequestHandler):
                 return
             if parsed.path == "/api/stocks":
                 self.send_json({"ok": True, "table": stock_table_snapshot(), "details": stock_details_snapshot()})
+                return
+            if parsed.path == "/api/best-choice":
+                self.send_json({"ok": True, "best_choice": best_choice_snapshot()})
                 return
             if parsed.path == "/api/settings":
                 self.send_json({"ok": True, "settings": load_settings()})

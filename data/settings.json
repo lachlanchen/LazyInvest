@@ -20,5 +20,8 @@
   "stock_table": {
     "source": "US_Stock_Research_Table_2026-06-13.md",
     "heading": "Maintained Stock Table"
+  },
+  "best_choice": {
+    "source": "US_Best_Growth_Choice_2026-06-13.md"
   }
 }
