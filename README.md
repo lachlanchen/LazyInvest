@@ -55,6 +55,16 @@ ls
 
 Open the Markdown files directly on GitHub or with any Markdown viewer.
 
+## LazyInvest Studio
+
+Run the local research studio when you want chat, backend research jobs, and a live table canvas in one browser page:
+
+```bash
+scripts/start_lazyinvest_studio_tmux.sh --host 127.0.0.1 --port 8788 --no-attach
+```
+
+Open `http://127.0.0.1:8788`. If that port is already in use, pass another `--port` value. The studio defaults to `gpt-5.5 / medium` for read-only chat and `gpt-5.5 / xhigh` for backend research and table-maintenance jobs. The right canvas is parsed from [US_Sector_Investment_Matrix_2026-06-13.md](US_Sector_Investment_Matrix_2026-06-13.md).
+
 ## Refresh Workflow
 
 1. Pick a dated note to update.

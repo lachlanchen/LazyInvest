@@ -2,6 +2,14 @@
 Thumbs.db
 *.tmp
 *.log
+__pycache__/
+*.py[cod]
 node_modules/
 .env
 .env.*
+data/chat/
+data/jobs/
+data/logs/
+!data/
+!data/.gitkeep
+!data/settings.json
