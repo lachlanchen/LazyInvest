@@ -1,0 +1,418 @@
+# U.S. Underfollowed Growth Stock Research Note
+
+Date: 2026-06-13  
+Scope: U.S.-listed public companies with plausible high-growth potential that are smaller or less mainstream than the obvious mega-cap AI/software names.  
+Use: Research watchlist only. This is not personal financial advice, a valuation model, or a buy/sell recommendation.
+
+## Executive Summary
+
+The most interesting names from this screen are:
+
+- Highest asymmetry: `TARS`, `GENI`, `ALKT`
+- Best quality-growth mix: `YOU`, `VCEL`, `WLDN`
+- Best AI-infrastructure-adjacent exposure without buying mega-cap semiconductors: `CECO`, `BELFB`
+
+The list deliberately avoids the most crowded AI winners where expectations are already very high. The common pattern is visible revenue growth, a specific niche market, improving margins or cash flow, and a catalyst that is still not fully obvious to generalist investors.
+
+## Market Data Snapshot
+
+Market data below reflects the latest available trading data retrieved on 2026-06-13, mostly from the U.S. session ending 2026-06-12. Market caps and prices move daily and should be refreshed before any action.
+
+| Ticker | Company | Price | Market Cap | Broad Category |
+|---|---:|---:|---:|---|
+| `ALKT` | Alkami Technology | $15.19 | ~$1.59B | Digital banking SaaS |
+| `TARS` | Tarsus Pharmaceuticals | $61.95 | ~$2.66B | Commercial-stage ophthalmology pharma |
+| `GENI` | Genius Sports | $6.85 | ~$1.57B | Sports data, betting, and media technology |
+| `YOU` | Clear Secure | $50.25 | ~$5.09B | Identity/security platform |
+| `VCEL` | Vericel | $37.46 | ~$1.90B | Advanced therapy / medtech |
+| `CECO` | CECO Environmental | $96.74 | ~$3.45B | Industrial environmental and power infrastructure |
+| `WLDN` | Willdan Group | $96.30 | ~$1.48B | Energy efficiency and infrastructure services |
+| `BELFB` | Bel Fuse | $293.87 | ~$3.10B | Electronics, defense, data infrastructure |
+
+## Selection Criteria
+
+I prioritized companies with:
+
+- Market cap generally below large-cap status, or at least still outside the broad mega-cap narrative.
+- Recent revenue growth above the broad market average.
+- Evidence of operating leverage, cash flow improvement, or a path to profitability.
+- A large addressable market with structural demand rather than a one-quarter spike.
+- A catalyst that can be tracked through filings, earnings, product launches, backlog, or guidance.
+
+I avoided names where the thesis is mostly "AI will grow" without company-specific evidence.
+
+## Watchlist
+
+### `ALKT` - Alkami Technology
+
+Alkami provides digital banking software for U.S. banks and credit unions. The thesis is that many regional financial institutions still need better digital onboarding, marketing, analytics, and customer engagement tools to compete with large banks and fintech platforms.
+
+Recent evidence:
+
+- Q1 2026 GAAP revenue was $126.1M, up 28.9% year over year.
+- Annual recurring revenue reached $493.6M, up 22%.
+- Digital banking users reached 23.0M, with revenue per registered user up 9%.
+- Adjusted EBITDA was $22.3M, versus $12.1M a year earlier.
+- FY2026 revenue guidance is $527.1M-$530.9M.
+
+Why it may be less noticed:
+
+Alkami is a vertical SaaS company in a quiet banking infrastructure niche. It is not a headline AI or cybersecurity stock, but the business benefits from long-term software modernization at smaller financial institutions.
+
+Key risks:
+
+- Still GAAP unprofitable.
+- Bank software buying cycles can slow if regional banks become more conservative.
+- Competition from legacy banking software vendors and fintech platforms.
+
+What to monitor:
+
+- ARR growth versus total revenue growth.
+- Net retention and revenue per user.
+- GAAP loss trend and stock-based compensation.
+- Large-bank or credit-union customer wins.
+
+Source: [Alkami Q1 2026 results](https://www.prnewswire.com/news-releases/alkami-announces-first-quarter-2026-financial-results-302757653.html)
+
+### `TARS` - Tarsus Pharmaceuticals
+
+Tarsus is a commercial-stage pharmaceutical company focused on eye care. Its main product, XDEMVY, treats Demodex blepharitis. The upside thesis is that the product is still creating and expanding its treatment category.
+
+Recent evidence:
+
+- Q1 2026 XDEMVY net product sales were $145.4M, up more than 85% year over year.
+- Management reaffirmed FY2026 XDEMVY net product sales guidance of $670M-$700M.
+- Management continues to state peak sales potential above $2B.
+- Nearly half of core eye care professionals are prescribing XDEMVY weekly.
+- The company initiated a Phase 2 trial for TP-05, an oral tablet being studied for potential Lyme disease prevention, with topline data expected in H1 2027.
+
+Why it may be less noticed:
+
+It is not an oncology or obesity drug story, so it may receive less broad investor attention despite strong commercial uptake.
+
+Key risks:
+
+- Heavy dependence on one marketed product.
+- Reimbursement and patient affordability.
+- Competition or slower-than-expected category adoption.
+- Pharma valuation can reset sharply if sales momentum decelerates.
+
+What to monitor:
+
+- Quarterly XDEMVY prescription trends.
+- Gross-to-net discounts.
+- Profitability timeline.
+- Pipeline updates for TP-05.
+
+Source: [Tarsus Q1 2026 results](https://www.globenewswire.com/news-release/2026/05/06/3289329/0/en/tarsus-reports-first-quarter-2026-financial-results-and-recent-business-achievements.html)
+
+### `GENI` - Genius Sports
+
+Genius Sports provides official sports data, betting technology, media, and fan engagement tools. The thesis is that sports betting, interactive broadcasts, dynamic ads, and official data rights can create a high-growth sports technology platform.
+
+Recent evidence:
+
+- Q1 2026 revenue was $188.0M, up 31% year over year.
+- The company closed the Legend acquisition on May 1, 2026.
+- FY2026 guidance was raised to $990M-$1.01B of revenue and $270M-$280M of adjusted EBITDA.
+- FY2026 adjusted EBITDA margin target increased to about 28% at the midpoint.
+
+Why it may be less noticed:
+
+Investors often focus on sportsbooks themselves, while Genius is a picks-and-shovels data and technology supplier to the sports betting and media ecosystem.
+
+Key risks:
+
+- Acquisition integration and new leverage.
+- Expensive sports rights renewals.
+- Customer concentration among major betting operators.
+- Regulatory risk around betting and prediction markets.
+
+What to monitor:
+
+- Free cash flow after the Legend acquisition.
+- Debt levels and interest expense.
+- Renewal terms for major data-rights contracts.
+- Growth in media/advertising revenue versus betting-only revenue.
+
+Source: [Genius Sports Q1 2026 results](https://investors.geniussports.com/news/news-details/2026/Genius-Sports-Reports-31-Revenue-Growth-and-21-Adjusted-EBITDA-Growth-Raises-2026-Guidance-Targeting-28-Adjusted-EBITDA-Margin-Following-Legend-Acquisition/default.aspx)
+
+### `YOU` - Clear Secure
+
+Clear is best known for airport identity lanes, but the broader thesis is secure identity verification across travel, retail, venues, and digital workflows.
+
+Recent evidence:
+
+- Q1 2026 revenue was $253.0M, up 19.7% year over year.
+- Total bookings were $291.7M, up 40.8%.
+- Operating income margin was 24.5%.
+- Adjusted EBITDA margin was 31.9%, up 720 basis points year over year.
+- Free cash flow was $185.5M in Q1.
+- Total CLEAR members reached 41.0M, up 31.3%.
+- FY2026 free cash flow guidance was raised to at least $465M.
+
+Why it may be less noticed:
+
+Many investors still view Clear as an airport-lane company. If it becomes a broader trusted identity platform, the market may eventually value it differently.
+
+Key risks:
+
+- Privacy, biometric, and data security regulation.
+- Dependence on travel and TSA-related airport workflows.
+- Need to prove non-airport identity products can scale.
+- Competitive pressure from government identity programs and platform companies.
+
+What to monitor:
+
+- Growth of CLEAR1 and non-airport bookings.
+- Member retention and pricing.
+- Airport rollout of eGates.
+- Any privacy/security incidents or regulatory actions.
+
+Source: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results)
+
+### `VCEL` - Vericel
+
+Vericel develops advanced therapies for sports medicine and severe burn care. The thesis is durable procedure growth, high gross margins, and expanding use of MACI and burn-care products.
+
+Recent evidence:
+
+- Q1 2026 total revenue was $68.4M, up 30%.
+- MACI revenue grew 22%.
+- Burn Care revenue grew 91%.
+- Gross margin was 72%.
+- Adjusted EBITDA increased 195% to $9.6M.
+- Free cash flow was $15.1M.
+- The company had about $211M in cash and investments and no debt.
+- FY2026 revenue guidance was raised to $326M-$336M.
+
+Why it may be less noticed:
+
+It is a specialized medtech/advanced-therapy company, not a broad device platform or biotech lottery ticket. That can keep it under the radar for generalist investors.
+
+Key risks:
+
+- Procedure volumes and surgeon adoption.
+- Reimbursement and hospital purchasing decisions.
+- Manufacturing complexity.
+- Valuation if growth slows.
+
+What to monitor:
+
+- MACI biopsy and implant growth.
+- Burn-care revenue sustainability.
+- Adjusted EBITDA margin versus the company target.
+- International expansion progress.
+
+Source: [Vericel Q1 2026 results](https://investors.vcel.com/news-releases/news-release-details/vericel-reports-first-quarter-2026-financial-results-and-raises)
+
+### `CECO` - CECO Environmental
+
+CECO sells industrial air, water, emissions, and energy-related equipment. The growth thesis is industrial reshoring, electricity demand, natural gas power generation, and infrastructure needed for data centers and electrification.
+
+Recent evidence:
+
+- Q1 2026 orders were $449.5M, up 97%.
+- Backlog reached $1.035B, up 72%.
+- Revenue was $205.9M, up 17%.
+- Adjusted EBITDA was $20.4M, up 46%.
+- Management raised FY2026 guidance to $940M-$1.0B of revenue and $120M-$140M of adjusted EBITDA.
+- Management cited large-scale projects tied to natural gas power generation, data centers, AI computing, reshoring, and electrification.
+- The proposed Thermon transaction is expected to add data-center and power-market exposure, but also adds integration risk.
+
+Why it may be less noticed:
+
+CECO is an industrial company rather than a clean AI stock. It may benefit from AI infrastructure power demand indirectly, without being priced exactly like a semiconductor or data-center REIT.
+
+Key risks:
+
+- Cyclical industrial orders.
+- Lower-margin backlog mix.
+- Thermon merger integration.
+- Project timing and working-capital swings.
+
+What to monitor:
+
+- Book-to-bill ratio.
+- Backlog quality and gross margin.
+- Free cash flow conversion.
+- Thermon synergies and combined-company leverage.
+
+Source: [CECO Q1 2026 results](https://www.globenewswire.com/news-release/2026/04/28/3282406/0/en/ceco-environmental-reports-first-quarter-2026-results.html)
+
+### `WLDN` - Willdan Group
+
+Willdan provides energy efficiency, infrastructure, analytics, engineering, and program implementation services for utilities, governments, and commercial customers.
+
+Recent evidence:
+
+- Q1 2026 contract revenue was $155.1M, up 1.8%, or up 9.6% normalized.
+- Net revenue was $92.4M, up 8.3%, or up 16.6% normalized.
+- Adjusted EBITDA was $18.1M, up 25.4%, or up 35.0% normalized.
+- Adjusted diluted EPS was $0.91, up 44.4%.
+- FY2026 targets are $410M-$425M net revenue, $100M-$105M adjusted EBITDA, and $4.90-$5.05 adjusted diluted EPS.
+- Long-term goals call for 15%-20% annual growth including acquisitions and high-20s adjusted EBITDA-to-net-revenue margin.
+
+Why it may be less noticed:
+
+This is a practical energy-services compounder rather than a flashy clean-tech manufacturer. The business can benefit from energy efficiency budgets, utility programs, and commercial customers trying to manage power costs.
+
+Key risks:
+
+- Project timing and customer budgets.
+- Dependence on utility and public-sector programs.
+- Acquisition integration.
+- Revenue quality, since gross revenue includes pass-through subcontractor costs.
+
+What to monitor:
+
+- Net revenue growth rather than only contract revenue.
+- Adjusted EBITDA margin on net revenue.
+- Cash conversion.
+- Commercial customer mix after the Burton Energy acquisition.
+
+Source: [Willdan Q1 2026 results](https://www.nasdaq.com/press-release/willdan-group-reports-first-quarter-results-2026-05-07)
+
+### `BELFB` - Bel Fuse
+
+Bel Fuse designs electronic components and systems for aerospace, defense, industrial, and data-driven markets. The thesis is exposure to AI/data infrastructure, high-performance compute, defense, and power conversion without being a crowded GPU stock.
+
+Recent evidence:
+
+- Q1 2026 net sales were $178.5M, up 17.2%.
+- Gross margin was 39.0%, up from 38.6%.
+- Non-GAAP net earnings were $22.8M, versus $16.8M a year earlier.
+- Adjusted EBITDA was $34.5M.
+- Management guided Q2 2026 sales to $195M-$215M with 38%-40% gross margin.
+- Management cited healthy networking and data infrastructure demand, improving datacenter connectivity momentum, and high-performance compute tied to AI-driven investment.
+- The March 2026 dataMate acquisition adds customers and data-solutions capability.
+
+Why it may be less noticed:
+
+Bel Fuse is a component supplier, not a headline platform company. Investors looking only at AI chips may miss suppliers of power, connectors, protection, and interconnect systems.
+
+Key risks:
+
+- Component-cycle volatility.
+- Tariff and supply-chain exposure.
+- China and Israel operating/geopolitical risk.
+- Acquisition integration.
+- Customer concentration.
+
+What to monitor:
+
+- Q2 sales versus guidance.
+- Gross margin sustainability near 38%-40%.
+- Datacenter and defense backlog commentary.
+- Net debt after acquisitions.
+
+Source: [Bel Fuse Q1 2026 results](https://ir.belfuse.com/node/18386/pdf)
+
+## Sector Themes Behind the Watchlist
+
+### AI Infrastructure Is Broader Than Chips
+
+The more durable second-order AI beneficiaries may include power infrastructure, cooling, electrical components, industrial environmental equipment, and energy efficiency. The EIA's 2026 outlook projects data center server electricity use increasing across the commercial building stock, with standalone data centers growing the most. The IEA estimates global data-center electricity consumption at about 415 TWh in 2024 and projects strong growth through 2030.
+
+Relevant companies from this list: `CECO`, `BELFB`, `WLDN`.
+
+Sources:
+
+- [EIA - Data center server energy use grows across the commercial sector](https://www.eia.gov/todayinenergy/detail.php?id=67704)
+- [IEA - Energy demand from AI](https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai)
+
+### Digital Financial Infrastructure Still Has Upgrade Demand
+
+Small and mid-sized financial institutions still need modern digital onboarding, analytics, marketing, and customer engagement tools. This creates a vertical SaaS opportunity that can be overlooked because it is not as visible as consumer fintech.
+
+Relevant company from this list: `ALKT`.
+
+Source:
+
+- [Grand View Research - Digital Banking Platform Market](https://www.grandviewresearch.com/press-release/global-digital-banking-platform-market)
+
+### Sports Betting and Sports Data Are Still Growing
+
+The American Gaming Association reported 2025 commercial sports betting revenue of $16.89B, up 22.6% year over year. This supports the broader opportunity for official data, trading tools, media products, and fan engagement.
+
+Relevant company from this list: `GENI`.
+
+Source:
+
+- [American Gaming Association - State of the States 2026](https://www.americangaming.org/resources/state-of-the-states-2026/)
+
+## Ranking Framework
+
+### Highest Asymmetry
+
+1. `TARS` - Strong commercial product ramp and still relatively small market cap, but one-product concentration creates real risk.
+2. `GENI` - Large guidance step-up after acquisition, with operating leverage possible if integration works.
+3. `ALKT` - Vertical SaaS at a moderate revenue multiple, with a credible route to better margins.
+
+### Highest Quality
+
+1. `YOU` - Profitable, high margins, strong free cash flow, and large member base.
+2. `VCEL` - High gross margin, no debt, positive free cash flow, specialized product franchise.
+3. `WLDN` - Strong adjusted earnings growth and clear demand from energy efficiency/infrastructure programs.
+
+### Best AI-Adjacent Exposure
+
+1. `CECO` - Backlog, natural gas power exposure, data-center power demand, Thermon transaction.
+2. `BELFB` - Data-center connectivity, power conversion, defense, and high-performance compute component exposure.
+3. `WLDN` - Energy-efficiency services and commercial energy optimization.
+
+## Names Considered But Not Prioritized
+
+These may still be strong companies, but they are less consistent with the "less noticed" requirement:
+
+- `CRDO` - Excellent AI data-center connectivity growth, but already much more widely followed and valued aggressively.
+- `NXT` / Nextpower, formerly Nextracker - Strong solar tracker and energy platform, but already a larger, better-known infrastructure name.
+- `MOD` - Beneficiary of data-center cooling, but more discovered after a large rerating.
+- `IESC` - Electrical and infrastructure exposure, but recent stock performance has made it much less hidden.
+
+## Due Diligence Checklist
+
+Before considering any position, update the following:
+
+- Latest 10-Q / 10-K and earnings call transcript.
+- Revenue growth split between organic and acquired growth.
+- Gross margin and operating margin trend.
+- Free cash flow conversion.
+- Dilution from stock-based compensation.
+- Debt, interest expense, and maturity schedule.
+- Customer concentration.
+- Insider buying/selling.
+- Short interest.
+- Valuation versus forward revenue, EBITDA, earnings, and free cash flow.
+- Next catalyst date: earnings, FDA date, product launch, customer announcement, acquisition close, or guidance update.
+
+## Practical Watch Rules
+
+Potentially constructive signals:
+
+- Revenue growth remains above 20% while margins improve.
+- Guidance is raised for revenue and EBITDA, not only revenue.
+- Free cash flow improves faster than adjusted EBITDA.
+- Backlog grows with stable or rising margin.
+- Customer concentration falls over time.
+
+Warning signals:
+
+- Growth is mainly acquisition-driven while debt rises.
+- Gross margin deteriorates without a clear temporary cause.
+- Management leans heavily on adjusted numbers while GAAP losses widen.
+- Stock-based compensation grows faster than revenue.
+- A single customer, product, or reimbursement channel drives most of the thesis.
+
+## Bottom Line
+
+The cleanest research basket from this screen is:
+
+- `TARS` for high-risk/high-upside commercial pharma growth.
+- `ALKT` for under-the-radar vertical SaaS.
+- `GENI` for sports data and betting infrastructure.
+- `YOU` for profitable identity-platform growth.
+- `VCEL` for specialized medtech quality.
+- `CECO`, `WLDN`, and `BELFB` for second-order AI infrastructure and energy demand.
+
+For a conservative approach, focus first on `YOU`, `VCEL`, and `WLDN`. For higher upside with higher volatility, focus first on `TARS`, `GENI`, and `ALKT`. For AI infrastructure exposure outside crowded semiconductor trades, focus on `CECO` and `BELFB`.

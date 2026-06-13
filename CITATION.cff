@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use LazyInvest, please cite this repository."
+type: software
+title: "LazyInvest: Dated U.S. Sector and Stock Research Notes"
+version: 0.1.0
+date-released: 2026-06-13
+abstract: "A public Markdown workspace for dated U.S. stock, sector, and underfollowed-growth investment research notes."
+authors:
+  - family-names: Chen
+    given-names: Lachlan
+    alias: lachlanchen
+repository-code: "https://github.com/lachlanchen/LazyInvest"
+url: "https://earn.lazying.art"
+keywords:
+  - investment research
+  - stock research
+  - sector analysis
+  - U.S. equities
+  - watchlist
+  - LazyingArt
