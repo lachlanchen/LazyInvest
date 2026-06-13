@@ -10,6 +10,8 @@
 [![Research](https://img.shields.io/badge/Research-Markdown-111827?style=for-the-badge&logo=markdown&logoColor=white)](US_Sector_Investment_Matrix_2026-06-13.md)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/lachlanchen)
 
+![LazyInvest Studio screenshot](figs/lazyinvest-studio.png)
+
 LazyInvest collects investment research notes that separate current sector strength, crowded momentum, less-noticed growth candidates, high-risk moonshots, and avoid-list companies. The repository is designed to be easy to refresh: each note is dated, source-linked, and written in Markdown.
 
 This is a research notebook, not personal financial advice. Market data, guidance, laws, rates, and company facts change quickly; refresh primary sources before using any note.
