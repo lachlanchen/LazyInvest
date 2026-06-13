@@ -73,6 +73,22 @@ Open `http://127.0.0.1:8788`. If that port is already in use, pass another `--po
 4. Update assumptions, source links, and the research date.
 5. Run the validation commands below.
 
+## Daily Automation
+
+Run one deep-research table refresh per local day, then commit and push any validated research changes:
+
+```bash
+scripts/run_daily_lazyinvest_research.sh
+```
+
+Install it as a daily cron job:
+
+```bash
+scripts/run_daily_lazyinvest_research.sh --install-cron --cron-time 07:30
+```
+
+The default timezone is `Asia/Hong_Kong`. The runner uses `gpt-5.5 / xhigh`, refuses to start on a dirty worktree, records daily state under ignored `data/daily-research/`, and stages only LazyInvest research Markdown/settings files before committing. Cron must be able to find `codex` and use the repo's git credentials. Use `--force` for a second manual run on the same date or `--dry-run` to check setup without launching Codex.
+
 ## Validation
 
 ```bash
