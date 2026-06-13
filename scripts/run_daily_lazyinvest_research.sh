@@ -211,8 +211,10 @@ $(sed -n '1,240p' "$ROOT_DIR/prompts/lazyinvest-research-agent.md")
 
 - Deeply research current U.S. public-company and sector evidence using current primary sources whenever possible.
 - Refresh the maintained table in \`US_Sector_Investment_Matrix_2026-06-13.md\` under \`## Maintained Sector Table\`.
+- Refresh the maintained stock table in \`US_Stock_Research_Table_2026-06-13.md\` under \`## Maintained Stock Table\`.
 - Keep the same table columns so LazyInvest Studio can keep parsing the right canvas.
-- Update the file date, market-data context, source links, and nearby sector notes when the table changes.
+- Keep the stock table aligned with the deeper stock analysis sections in \`US_Underfollowed_Growth_Stocks_2026-06-13.md\`.
+- Update file dates, market-data context, source links, nearby sector notes, and stock detail notes when tables change.
 - If the underfollowed-growth note needs a directly related update, keep it scoped and evidence-linked.
 - Keep this as a research watchlist, not personal financial advice.
 - Do not commit or push. This shell runner validates, commits, and pushes after you finish.

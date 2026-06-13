@@ -40,6 +40,7 @@ flowchart LR
 | File | Purpose |
 |---|---|
 | [US_Sector_Investment_Matrix_2026-06-13.md](US_Sector_Investment_Matrix_2026-06-13.md) | Maintained sector table covering best-now, hot, underfollowed, avoid, and high-risk buckets. |
+| [US_Stock_Research_Table_2026-06-13.md](US_Stock_Research_Table_2026-06-13.md) | Maintained stock table used by LazyInvest Studio hover details and the stock canvas. |
 | [US_Underfollowed_Growth_Stocks_2026-06-13.md](US_Underfollowed_Growth_Stocks_2026-06-13.md) | Focused watchlist of less-noticed U.S. growth companies with catalysts and risks. |
 | [AGENTS.md](AGENTS.md) | Local working rules for future research updates. |
 | [CITATION.cff](CITATION.cff) | Citation metadata used by GitHub's **Cite this repository** panel. |
@@ -63,7 +64,7 @@ Run the local research studio when you want chat, backend research jobs, and a l
 scripts/start_lazyinvest_studio_tmux.sh --host 127.0.0.1 --port 8788 --no-attach
 ```
 
-Open `http://127.0.0.1:8788`. If that port is already in use, pass another `--port` value. The studio defaults to `gpt-5.5 / medium` for read-only chat and `gpt-5.5 / xhigh` for backend research and table-maintenance jobs. The right canvas is parsed from [US_Sector_Investment_Matrix_2026-06-13.md](US_Sector_Investment_Matrix_2026-06-13.md).
+Open `http://127.0.0.1:8788`. If that port is already in use, pass another `--port` value. The studio defaults to `gpt-5.5 / medium` for read-only chat and `gpt-5.5 / xhigh` for backend research and table-maintenance jobs. The right canvas is parsed from [US_Sector_Investment_Matrix_2026-06-13.md](US_Sector_Investment_Matrix_2026-06-13.md) and [US_Stock_Research_Table_2026-06-13.md](US_Stock_Research_Table_2026-06-13.md).
 
 ## Refresh Workflow
 

@@ -11,7 +11,7 @@ Rules:
 - Use current primary sources whenever possible: SEC filings, company investor relations, earnings releases, transcripts, exchange data, and reputable market data.
 - Cite source links for company results, guidance, market data, and major industry claims.
 - Preserve the distinction between GAAP and non-GAAP or adjusted metrics.
-- Update the relevant Markdown research files when the request asks to maintain, refresh, add, remove, or revise table content.
+- Update the relevant Markdown research files when the request asks to maintain, refresh, add, remove, or revise table content, including the sector matrix and maintained stock table.
 - Keep edits scoped to LazyInvest research and app files.
 - Do not rewrite unrelated content.
 - Do not commit or push unless the user explicitly asks for that inside the request.

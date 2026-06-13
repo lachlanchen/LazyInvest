@@ -28,6 +28,7 @@ RESEARCH_PROMPT_PATH = ROOT_DIR / "prompts" / "lazyinvest-research-agent.md"
 DEFAULT_MATRIX = ROOT_DIR / "US_Sector_Investment_Matrix_2026-06-13.md"
 DEFAULT_TIMEOUT_SECONDS = 180
 RESEARCH_TIMEOUT_SECONDS = 60 * 45
+DEFAULT_STOCK_TABLE = ROOT_DIR / "US_Stock_Research_Table_2026-06-13.md"
 
 
 DEFAULT_SETTINGS: dict[str, Any] = {
@@ -39,6 +40,10 @@ DEFAULT_SETTINGS: dict[str, Any] = {
     "table": {
         "source": "US_Sector_Investment_Matrix_2026-06-13.md",
         "heading": "Maintained Sector Table",
+    },
+    "stock_table": {
+        "source": "US_Stock_Research_Table_2026-06-13.md",
+        "heading": "Maintained Stock Table",
     },
 }
 
@@ -124,13 +129,21 @@ def profile(name: str) -> dict[str, str]:
     return {"model": str(selected["model"]), "reasoning": str(selected["reasoning"])}
 
 
-def matrix_path() -> Path:
+def configured_repo_path(section: str, default_path: Path) -> Path:
     settings = load_settings()
-    source = str((settings.get("table") or {}).get("source") or DEFAULT_MATRIX.name)
+    source = str((settings.get(section) or {}).get("source") or default_path.name)
     candidate = (ROOT_DIR / source).resolve()
     if ROOT_DIR.resolve() not in candidate.parents and candidate != ROOT_DIR.resolve():
-        return DEFAULT_MATRIX
+        return default_path
     return candidate
+
+
+def matrix_path() -> Path:
+    return configured_repo_path("table", DEFAULT_MATRIX)
+
+
+def stock_table_path() -> Path:
+    return configured_repo_path("stock_table", DEFAULT_STOCK_TABLE)
 
 
 def split_markdown_row(line: str) -> list[str]:
@@ -172,16 +185,12 @@ def extract_table(markdown: str, heading: str = "Maintained Sector Table") -> di
         "headers": headers,
         "rows": rows,
         "raw": table_lines,
-        "source": matrix_path().name,
         "updated_at": now_iso(),
     }
 
 
-def table_snapshot() -> dict[str, Any]:
-    path = matrix_path()
+def markdown_table_snapshot(path: Path, heading: str) -> dict[str, Any]:
     text = read_text(path)
-    settings = load_settings()
-    heading = str((settings.get("table") or {}).get("heading") or "Maintained Sector Table")
     table = extract_table(text, heading=heading)
     table["source"] = str(path.relative_to(ROOT_DIR))
     try:
@@ -192,6 +201,101 @@ def table_snapshot() -> dict[str, Any]:
         table["mtime"] = ""
         table["size"] = 0
     return table
+
+
+def table_snapshot() -> dict[str, Any]:
+    settings = load_settings()
+    heading = str((settings.get("table") or {}).get("heading") or "Maintained Sector Table")
+    return markdown_table_snapshot(matrix_path(), heading)
+
+
+def stock_table_snapshot() -> dict[str, Any]:
+    settings = load_settings()
+    heading = str((settings.get("stock_table") or {}).get("heading") or "Maintained Stock Table")
+    return markdown_table_snapshot(stock_table_path(), heading)
+
+
+def normalize_ticker(value: str) -> str:
+    match = re.search(r"`?([A-Z][A-Z0-9.]{0,9})`?", value or "")
+    return match.group(1) if match else ""
+
+
+def strip_markdown(value: str) -> str:
+    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r"\1 (\2)", value)
+    text = text.replace("`", "")
+    text = re.sub(r"^\s*[-*]\s+", "", text, flags=re.M)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+
+def extract_watchlist_sections() -> dict[str, dict[str, str]]:
+    text = read_text(ROOT_DIR / "US_Underfollowed_Growth_Stocks_2026-06-13.md")
+    lines = text.splitlines()
+    sections: dict[str, dict[str, str]] = {}
+    heading_re = re.compile(r"^###\s+`([^`]+)`\s+-\s+(.+?)\s*$")
+    for index, line in enumerate(lines):
+        match = heading_re.match(line)
+        if not match:
+            continue
+        ticker, company = match.group(1), match.group(2)
+        body: list[str] = []
+        for next_line in lines[index + 1 :]:
+            if re.match(r"^##+\s+", next_line):
+                break
+            body.append(next_line)
+        sections[ticker] = {"ticker": ticker, "company": company, "analysis": strip_markdown("\n".join(body))}
+    return sections
+
+
+def extract_sector_ticker_notes() -> dict[str, list[str]]:
+    notes: dict[str, list[str]] = {}
+    text = read_text(matrix_path())
+    bullet_re = re.compile(r"^-\s+((?:`[A-Z][A-Z0-9.]{0,9}`(?:,\s*)?)+):\s+(.+)$")
+    for line in text.splitlines():
+        match = bullet_re.match(line.strip())
+        if not match:
+            continue
+        tickers = re.findall(r"`([A-Z][A-Z0-9.]{0,9})`", match.group(1))
+        note = strip_markdown(match.group(2))
+        for ticker in tickers:
+            notes.setdefault(ticker, []).append(note)
+    return notes
+
+
+def stock_details_snapshot() -> dict[str, Any]:
+    stock_table = stock_table_snapshot()
+    details: dict[str, dict[str, Any]] = {}
+    for row in stock_table.get("rows", []):
+        ticker = normalize_ticker(str(row.get("Ticker") or ""))
+        if not ticker:
+            continue
+        details[ticker] = {
+            "ticker": ticker,
+            "company": row.get("Company", ""),
+            "category": row.get("Category", ""),
+            "bucket": row.get("Bucket", ""),
+            "why": row.get("Why It Matters", ""),
+            "evidence": row.get("Evidence Snapshot", ""),
+            "risks": row.get("Main Risks", ""),
+            "monitor": row.get("Monitor", ""),
+            "source": row.get("Source", ""),
+            "row": row,
+        }
+
+    watchlist = extract_watchlist_sections()
+    for ticker, section in watchlist.items():
+        item = details.setdefault(ticker, {"ticker": ticker, "row": {}})
+        item.setdefault("company", section.get("company", ""))
+        if not item.get("company"):
+            item["company"] = section.get("company", "")
+        item["analysis"] = section.get("analysis", "")
+
+    sector_notes = extract_sector_ticker_notes()
+    for ticker, notes in sector_notes.items():
+        item = details.setdefault(ticker, {"ticker": ticker, "company": "", "row": {}})
+        item["sector_notes"] = notes[:5]
+
+    return {"source": stock_table.get("source", ""), "updated_at": now_iso(), "items": details}
 
 
 def research_files() -> list[dict[str, Any]]:
@@ -229,6 +333,19 @@ def compact_table_for_prompt() -> str:
     headers = table.get("headers", [])
     rows = table.get("rows", [])
     lines = ["Current LazyInvest sector matrix snapshot:"]
+    for row in rows:
+        parts = []
+        for header in headers:
+            parts.append(f"{header}: {row.get(header, '')}")
+        lines.append("- " + "; ".join(parts))
+    return "\n".join(lines)
+
+
+def compact_stock_table_for_prompt() -> str:
+    table = stock_table_snapshot()
+    headers = table.get("headers", [])
+    rows = table.get("rows", [])
+    lines = ["Current LazyInvest stock table snapshot:"]
     for row in rows:
         parts = []
         for header in headers:
@@ -301,6 +418,7 @@ def chat_reply(session_id: str, user_message: str) -> dict[str, Any]:
         [
             read_text(CHAT_PROMPT_PATH),
             compact_table_for_prompt(),
+            compact_stock_table_for_prompt(),
             "Recent chat history:",
             history,
             "Reply to the latest user message.",
@@ -357,6 +475,7 @@ def start_research_job(instruction: str) -> dict[str, Any]:
                 read_text(RESEARCH_PROMPT_PATH),
                 "Current table snapshot:",
                 compact_table_for_prompt(),
+                compact_stock_table_for_prompt(),
                 "User request:",
                 instruction,
             ]
@@ -478,9 +597,15 @@ INDEX_HTML = r"""<!doctype html>
     .btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
     .canvas { min-width: 0; }
     .toolbar {
-      display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center;
       padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--panel-2);
     }
+    .tabs { display: inline-flex; gap: 4px; padding: 3px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+    .tab {
+      min-height: 32px; border: 0; border-radius: 6px; background: transparent; padding: 0 10px;
+      cursor: pointer; font-size: 12px; font-weight: 750; color: var(--muted);
+    }
+    .tab.active { background: #0f312f; color: white; }
     .search { width: 100%; border: 1px solid var(--line); border-radius: 8px; min-height: 38px; padding: 0 12px; }
     .table-wrap { overflow: auto; padding: 0; }
     table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; min-width: 1020px; }
@@ -491,7 +616,12 @@ INDEX_HTML = r"""<!doctype html>
     tbody tr:nth-child(even) td { background: #fbfcf8; }
     tbody tr:hover td { background: #eef8f6; }
     code, .ticker { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-    .ticker { color: #0c6966; font-weight: 800; }
+    .ticker {
+      color: #0c6966; font-weight: 800; border: 1px solid transparent; background: #e8f6f4;
+      border-radius: 6px; padding: 1px 5px; cursor: pointer; line-height: 1.5;
+    }
+    .ticker:hover, .ticker:focus { border-color: #7ac4be; outline: 0; box-shadow: 0 0 0 3px rgba(14,165,160,.12); }
+    td a { color: #075f5c; font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 2px; }
     .jobs { border-top: 1px solid var(--line); max-height: 220px; overflow: auto; background: #fbfcf8; }
     .job { padding: 10px 14px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; font-size: 12px; }
     .job strong { font-size: 13px; }
@@ -507,12 +637,31 @@ INDEX_HTML = r"""<!doctype html>
       position: fixed; right: 16px; bottom: 16px; background: #17201c; color: white;
       padding: 10px 12px; border-radius: 8px; box-shadow: var(--shadow); display: none; max-width: 420px;
     }
+    .stock-detail {
+      border-top: 1px solid var(--line); padding: 14px 16px; background: #fbfcf8;
+      display: grid; gap: 10px; max-height: 280px; overflow: auto;
+    }
+    .detail-head { display: flex; justify-content: space-between; gap: 10px; align-items: start; }
+    .detail-head h3 { margin: 0; font-size: 15px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; font-size: 12px; }
+    .detail-box { border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; background: white; min-width: 0; }
+    .detail-box strong { display: block; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+    .analysis { white-space: pre-wrap; line-height: 1.45; font-size: 12px; color: #26332d; }
+    .ticker-tip {
+      position: fixed; z-index: 30; width: min(420px, calc(100vw - 24px)); display: none;
+      background: #17201c; color: white; border-radius: 8px; padding: 11px 12px;
+      box-shadow: 0 18px 48px rgba(0,0,0,.28); font-size: 12px; line-height: 1.4;
+    }
+    .ticker-tip strong { display: block; font-size: 13px; margin-bottom: 5px; }
+    .ticker-tip .muted { color: #c9d4cf; }
     @media (max-width: 980px) {
       .shell { grid-template-columns: 1fr; }
       .pane { min-height: 70vh; }
       header { grid-template-columns: 1fr; }
       .header-actions { justify-content: flex-start; }
       .setting-row { grid-template-columns: 1fr; }
+      .toolbar { grid-template-columns: 1fr; }
+      .detail-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -523,7 +672,7 @@ INDEX_HTML = r"""<!doctype html>
         <div class="mark">LI</div>
         <div>
           <h1>LazyInvest Studio</h1>
-          <p class="tagline">Chat, deep research jobs, and a live sector-table canvas for LazyInvest.</p>
+          <p class="tagline">Chat, deep research jobs, stock hover details, and live Markdown tables for LazyInvest.</p>
         </div>
       </div>
       <div class="header-actions">
@@ -555,20 +704,25 @@ INDEX_HTML = r"""<!doctype html>
       <section class="pane canvas">
         <div class="pane-head">
           <div class="pane-title">
-            <h2>Sector Table Canvas</h2>
+            <h2>Research Canvas</h2>
             <span class="pill" id="tableMeta">loading</span>
           </div>
-          <div class="sub">Right canvas is parsed from the maintained Markdown matrix. Completed research jobs refresh this view.</div>
+          <div class="sub">Right canvas is parsed from maintained Markdown tables. Hover or click a ticker for stock detail.</div>
         </div>
         <div class="toolbar">
+          <div class="tabs" aria-label="Canvas view">
+            <button class="tab active" data-canvas="sector" id="sectorTab">Sectors</button>
+            <button class="tab" data-canvas="stocks" id="stocksTab">Stocks</button>
+          </div>
           <input class="search" id="filterInput" placeholder="Filter sectors, tickers, or risk notes" />
           <div class="row">
-            <a class="btn" href="/file/US_Sector_Investment_Matrix_2026-06-13.md" target="_blank">Open Matrix</a>
+            <a class="btn" href="/file/US_Sector_Investment_Matrix_2026-06-13.md" target="_blank" id="openCurrentFile">Open Matrix</a>
           </div>
         </div>
         <div class="table-wrap">
           <table id="sectorTable"></table>
         </div>
+        <div class="stock-detail" id="stockDetail"></div>
         <div class="jobs" id="jobs"></div>
       </section>
     </main>
@@ -587,8 +741,18 @@ INDEX_HTML = r"""<!doctype html>
     </form>
   </dialog>
   <div class="toast" id="toast"></div>
+  <div class="ticker-tip" id="tickerTip"></div>
   <script>
-    const state = { sessionId: localStorage.lazyinvestSession || makeSession(), table: null, settings: null, polling: new Set() };
+    const state = {
+      sessionId: localStorage.lazyinvestSession || makeSession(),
+      table: null,
+      stockTable: null,
+      stockDetails: {},
+      settings: null,
+      polling: new Set(),
+      canvas: localStorage.lazyinvestCanvas || "sector",
+      selectedTicker: null
+    };
     localStorage.lazyinvestSession = state.sessionId;
 
     function makeSession() {
@@ -626,8 +790,22 @@ INDEX_HTML = r"""<!doctype html>
       document.getElementById("chatProfile").textContent = `chat: ${p.chat?.model || "gpt-5.5"} / ${p.chat?.reasoning || "medium"}`;
       document.getElementById("researchProfile").textContent = `research: ${p.research?.model || "gpt-5.5"} / ${p.research?.reasoning || "xhigh"}`;
     }
+    function currentTable() {
+      return state.canvas === "stocks" ? state.stockTable : state.table;
+    }
+    function renderCanvasTabs() {
+      document.querySelectorAll("[data-canvas]").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.canvas === state.canvas);
+      });
+      const link = document.getElementById("openCurrentFile");
+      const table = currentTable();
+      if (table?.source) {
+        link.href = "/file/" + table.source;
+        link.textContent = state.canvas === "stocks" ? "Open Stocks" : "Open Matrix";
+      }
+    }
     function renderTable() {
-      const table = state.table;
+      const table = currentTable();
       const el = document.getElementById("sectorTable");
       const meta = document.getElementById("tableMeta");
       if (!table || !table.headers?.length) {
@@ -635,18 +813,98 @@ INDEX_HTML = r"""<!doctype html>
         meta.textContent = "no table";
         return;
       }
-      meta.textContent = `${table.source} · ${table.rows.length} sectors`;
+      const unit = state.canvas === "stocks" ? "stocks" : "sectors";
+      meta.textContent = `${table.source} · ${table.rows.length} ${unit}`;
       const needle = document.getElementById("filterInput").value.trim().toLowerCase();
       const rows = table.rows.filter(row => JSON.stringify(row).toLowerCase().includes(needle));
       const thead = `<thead><tr>${table.headers.map(h => `<th>${escapeHtml(h)}</th>`).join("")}</tr></thead>`;
-      const tbody = rows.map(row => `<tr>${table.headers.map(h => `<td>${formatCell(row[h] || "")}</td>`).join("")}</tr>`).join("");
+      const tbody = rows.map(row => `<tr>${table.headers.map(h => `<td>${formatCell(row[h] || "", h)}</td>`).join("")}</tr>`).join("");
       el.innerHTML = thead + `<tbody>${tbody}</tbody>`;
+      renderCanvasTabs();
+      renderStockDetail(state.selectedTicker);
     }
-    function formatCell(value) {
-      return escapeHtml(value).replace(/`([^`]+)`/g, '<span class="ticker">$1</span>');
+    function tickerButton(symbol) {
+      const safe = escapeHtml(symbol);
+      return `<button type="button" class="ticker" data-ticker="${safe}">${safe}</button>`;
+    }
+    function formatCell(value, header = "") {
+      let text = escapeHtml(value);
+      text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>');
+      text = text.replace(/`([A-Z][A-Z0-9.]{0,9})`/g, (_, ticker) => tickerButton(ticker));
+      const plain = String(value || "").replace(/`/g, "").trim();
+      if (header.toLowerCase().includes("ticker") && /^[A-Z][A-Z0-9.]{0,9}$/.test(plain)) {
+        return tickerButton(plain);
+      }
+      return text;
     }
     function escapeHtml(value) {
       return String(value).replace(/[&<>"']/g, ch => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[ch]));
+    }
+    function detailForTicker(symbol) {
+      return state.stockDetails?.[symbol] || null;
+    }
+    function cleanText(value, limit = 900) {
+      const text = String(value || "").replace(/\s+/g, " ").trim();
+      return text.length > limit ? text.slice(0, limit - 1) + "..." : text;
+    }
+    function renderStockDetail(symbol) {
+      const el = document.getElementById("stockDetail");
+      if (!symbol) {
+        el.innerHTML = '<div class="muted">Stock detail appears here after selecting a ticker.</div>';
+        return;
+      }
+      const detail = detailForTicker(symbol);
+      if (!detail) {
+        el.innerHTML = `<div class="detail-head"><h3>${tickerButton(symbol)}</h3><span class="pill">No maintained row yet</span></div>`;
+        return;
+      }
+      const title = `${escapeHtml(symbol)}${detail.company ? " · " + escapeHtml(detail.company) : ""}`;
+      const boxes = [
+        ["Bucket", detail.bucket],
+        ["Category", detail.category],
+        ["Why It Matters", detail.why],
+        ["Evidence", detail.evidence],
+        ["Risks", detail.risks],
+        ["Monitor", detail.monitor]
+      ].filter(([, value]) => value);
+      const sectorNotes = (detail.sector_notes || []).map(note => "- " + note).join("\n");
+      const analysis = detail.analysis || sectorNotes || "No deep analysis section has been linked yet.";
+      el.innerHTML = `
+        <div class="detail-head">
+          <h3>${tickerButton(symbol)} ${title.replace(escapeHtml(symbol), "")}</h3>
+          <span class="pill">${escapeHtml(detail.source ? "source linked" : "repo note")}</span>
+        </div>
+        <div class="detail-grid">
+          ${boxes.map(([label, value]) => `<div class="detail-box"><strong>${escapeHtml(label)}</strong>${formatCell(value)}</div>`).join("")}
+        </div>
+        <div class="detail-box">
+          <strong>Deep Analysis</strong>
+          <div class="analysis">${escapeHtml(cleanText(analysis, 2600))}</div>
+        </div>
+        ${detail.source ? `<div class="detail-box"><strong>Primary Source</strong>${formatCell(detail.source)}</div>` : ""}
+      `;
+    }
+    function showTickerTip(symbol, target) {
+      const tip = document.getElementById("tickerTip");
+      const detail = detailForTicker(symbol);
+      const title = detail?.company ? `${symbol} · ${detail.company}` : symbol;
+      const body = detail
+        ? [detail.bucket, detail.why, detail.evidence, detail.risks ? "Risk: " + detail.risks : ""].filter(Boolean).join(" ")
+        : "No maintained stock row yet. Click to inspect any sector note available in the repo.";
+      tip.innerHTML = `<strong>${escapeHtml(title)}</strong><div>${escapeHtml(cleanText(body, 520))}</div><div class="muted">Click ticker to pin deep analysis.</div>`;
+      tip.style.display = "block";
+      const rect = target.getBoundingClientRect();
+      const top = Math.min(window.innerHeight - tip.offsetHeight - 12, rect.bottom + 8);
+      const left = Math.min(window.innerWidth - tip.offsetWidth - 12, Math.max(12, rect.left));
+      tip.style.top = `${Math.max(12, top)}px`;
+      tip.style.left = `${left}px`;
+    }
+    function hideTickerTip() {
+      document.getElementById("tickerTip").style.display = "none";
+    }
+    function selectTicker(symbol) {
+      state.selectedTicker = symbol;
+      renderStockDetail(symbol);
     }
     function renderJobs(jobs) {
       const box = document.getElementById("jobs");
@@ -669,6 +927,8 @@ INDEX_HTML = r"""<!doctype html>
       const data = await api(`/api/state?session_id=${encodeURIComponent(state.sessionId)}`);
       state.settings = data.settings;
       state.table = data.table;
+      state.stockTable = data.stock_table;
+      state.stockDetails = data.stock_details?.items || {};
       renderProfiles();
       renderMessages(data.messages);
       renderTable();
@@ -693,7 +953,7 @@ INDEX_HTML = r"""<!doctype html>
     }
     async function startResearch() {
       const input = document.getElementById("messageInput");
-      const instruction = input.value.trim() || "Refresh the sector investment matrix with current evidence and maintain the table.";
+      const instruction = input.value.trim() || "Refresh the sector investment matrix and maintained stock table with current evidence.";
       document.getElementById("researchBtn").disabled = true;
       try {
         const data = await api("/api/research/jobs", { instruction });
@@ -756,6 +1016,29 @@ INDEX_HTML = r"""<!doctype html>
     document.getElementById("researchBtn").addEventListener("click", startResearch);
     document.getElementById("reloadBtn").addEventListener("click", loadState);
     document.getElementById("filterInput").addEventListener("input", renderTable);
+    document.querySelectorAll("[data-canvas]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        state.canvas = btn.dataset.canvas;
+        localStorage.lazyinvestCanvas = state.canvas;
+        renderTable();
+      });
+    });
+    document.getElementById("sectorTable").addEventListener("mouseover", event => {
+      const ticker = event.target.closest?.("[data-ticker]");
+      if (ticker) showTickerTip(ticker.dataset.ticker, ticker);
+    });
+    document.getElementById("sectorTable").addEventListener("mouseout", event => {
+      if (event.target.closest?.("[data-ticker]")) hideTickerTip();
+    });
+    document.getElementById("sectorTable").addEventListener("focusin", event => {
+      const ticker = event.target.closest?.("[data-ticker]");
+      if (ticker) showTickerTip(ticker.dataset.ticker, ticker);
+    });
+    document.getElementById("sectorTable").addEventListener("focusout", hideTickerTip);
+    document.getElementById("sectorTable").addEventListener("click", event => {
+      const ticker = event.target.closest?.("[data-ticker]");
+      if (ticker) selectTicker(ticker.dataset.ticker);
+    });
     document.getElementById("newSessionBtn").addEventListener("click", () => {
       state.sessionId = makeSession();
       localStorage.lazyinvestSession = state.sessionId;
@@ -820,6 +1103,8 @@ class LazyInvestHandler(BaseHTTPRequestHandler):
                         "ok": True,
                         "settings": load_settings(),
                         "table": table_snapshot(),
+                        "stock_table": stock_table_snapshot(),
+                        "stock_details": stock_details_snapshot(),
                         "files": research_files(),
                         "messages": load_messages(session_id),
                         "jobs": recent_jobs(),
@@ -828,6 +1113,9 @@ class LazyInvestHandler(BaseHTTPRequestHandler):
                 return
             if parsed.path == "/api/table":
                 self.send_json({"ok": True, "table": table_snapshot()})
+                return
+            if parsed.path == "/api/stocks":
+                self.send_json({"ok": True, "table": stock_table_snapshot(), "details": stock_details_snapshot()})
                 return
             if parsed.path == "/api/settings":
                 self.send_json({"ok": True, "settings": load_settings()})
