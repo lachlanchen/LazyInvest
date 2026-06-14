@@ -43,6 +43,7 @@ flowchart LR
 |---|---|
 | [US_Sector_Investment_Matrix_2026-06-13.md](US_Sector_Investment_Matrix_2026-06-13.md) | Maintained sector table covering best-now, hot, underfollowed, avoid, and high-risk buckets. |
 | [US_Best_Growth_Choice_2026-06-13.md](US_Best_Growth_Choice_2026-06-13.md) | Single best huge-growth choice annotation with evidence, proof, comparison screen, and risk controls. |
+| [US_Best_Growth_History.md](US_Best_Growth_History.md) | Calendar history of the selected best huge-growth choice, including price snapshot and recorded change. |
 | [US_Stock_Research_Table_2026-06-13.md](US_Stock_Research_Table_2026-06-13.md) | Maintained stock table used by LazyInvest Studio hover details and the stock canvas. |
 | [US_Underfollowed_Growth_Stocks_2026-06-13.md](US_Underfollowed_Growth_Stocks_2026-06-13.md) | Focused watchlist of less-noticed U.S. growth companies with catalysts and risks. |
 | [AGENTS.md](AGENTS.md) | Local working rules for future research updates. |
@@ -67,7 +68,7 @@ Run the local research studio when you want chat, backend research jobs, and a l
 scripts/start_lazyinvest_studio_tmux.sh --host 127.0.0.1 --port 8788 --no-attach
 ```
 
-Open `http://127.0.0.1:8788`. If that port is already in use, pass another `--port` value. The studio defaults to `gpt-5.5 / medium` for read-only chat and `gpt-5.5 / xhigh` for backend research and table-maintenance jobs. The right canvas is parsed from [US_Sector_Investment_Matrix_2026-06-13.md](US_Sector_Investment_Matrix_2026-06-13.md), [US_Stock_Research_Table_2026-06-13.md](US_Stock_Research_Table_2026-06-13.md), and [US_Best_Growth_Choice_2026-06-13.md](US_Best_Growth_Choice_2026-06-13.md).
+Open `http://127.0.0.1:8788`. If that port is already in use, pass another `--port` value. The studio defaults to `gpt-5.5 / medium` for read-only chat and `gpt-5.5 / xhigh` for backend research and table-maintenance jobs. The right canvas is parsed from [US_Sector_Investment_Matrix_2026-06-13.md](US_Sector_Investment_Matrix_2026-06-13.md), [US_Stock_Research_Table_2026-06-13.md](US_Stock_Research_Table_2026-06-13.md), [US_Best_Growth_Choice_2026-06-13.md](US_Best_Growth_Choice_2026-06-13.md), and [US_Best_Growth_History.md](US_Best_Growth_History.md). Use the **History** tab and calendar picker to inspect historical best-pick records.
 
 ## Refresh Workflow
 
@@ -91,7 +92,7 @@ Install it as a daily cron job:
 scripts/run_daily_lazyinvest_research.sh --install-cron --cron-time 07:30
 ```
 
-The default timezone is `Asia/Hong_Kong`. The runner uses `gpt-5.5 / xhigh`, refuses to start on a dirty worktree, records daily state under ignored `data/daily-research/`, and stages only LazyInvest research Markdown/settings files before committing. Cron must be able to find `codex` and use the repo's git credentials. Use `--force` for a second manual run on the same date or `--dry-run` to check setup without launching Codex.
+The default timezone is `Asia/Hong_Kong`. The runner uses `gpt-5.5 / xhigh`, refuses to start on a dirty worktree, records daily state under ignored `data/daily-research/`, updates the best-pick history, refreshes [figs/lazyinvest-studio.png](figs/lazyinvest-studio.png), and stages only LazyInvest research Markdown/settings/screenshot files before committing. Cron must be able to find `codex`, `python3`, Chrome/Chromium, and the repo's git credentials. Use `--force` for a second manual run on the same date or `--dry-run` to check setup without launching Codex.
 
 ## Validation
 

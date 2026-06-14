@@ -30,6 +30,7 @@ DEFAULT_TIMEOUT_SECONDS = 180
 RESEARCH_TIMEOUT_SECONDS = 60 * 45
 DEFAULT_STOCK_TABLE = ROOT_DIR / "US_Stock_Research_Table_2026-06-13.md"
 DEFAULT_BEST_CHOICE = ROOT_DIR / "US_Best_Growth_Choice_2026-06-13.md"
+DEFAULT_BEST_HISTORY = ROOT_DIR / "US_Best_Growth_History.md"
 
 
 DEFAULT_SETTINGS: dict[str, Any] = {
@@ -48,6 +49,10 @@ DEFAULT_SETTINGS: dict[str, Any] = {
     },
     "best_choice": {
         "source": "US_Best_Growth_Choice_2026-06-13.md",
+    },
+    "best_history": {
+        "source": "US_Best_Growth_History.md",
+        "heading": "Maintained Best Choice History",
     },
 }
 
@@ -152,6 +157,10 @@ def stock_table_path() -> Path:
 
 def best_choice_path() -> Path:
     return configured_repo_path("best_choice", DEFAULT_BEST_CHOICE)
+
+
+def best_history_path() -> Path:
+    return configured_repo_path("best_history", DEFAULT_BEST_HISTORY)
 
 
 def split_markdown_row(line: str) -> list[str]:
@@ -259,6 +268,16 @@ def best_choice_snapshot() -> dict[str, Any]:
         "mtime": mtime,
         "size": size,
     }
+
+
+def best_history_snapshot() -> dict[str, Any]:
+    settings = load_settings()
+    heading = str((settings.get("best_history") or {}).get("heading") or "Maintained Best Choice History")
+    table = markdown_table_snapshot(best_history_path(), heading)
+    selected_dates = [str(row.get("Date", "")) for row in table.get("rows", []) if row.get("Date")]
+    table["dates"] = sorted(selected_dates)
+    table["latest_date"] = max(selected_dates) if selected_dates else ""
+    return table
 
 
 def normalize_ticker(value: str) -> str:
@@ -719,6 +738,7 @@ INDEX_HTML = r"""<!doctype html>
     .ticker-tip strong { display: block; font-size: 13px; margin-bottom: 5px; }
     .ticker-tip .muted { color: #c9d4cf; }
     .best-choice-panel { display: none; padding: 16px; min-width: 0; }
+    .history-panel { display: none; padding: 16px; min-width: 0; }
     .best-hero {
       display: grid; gap: 12px; border: 1px solid #e3c568; background: #fff8df;
       border-radius: 8px; padding: 15px; box-shadow: inset 4px 0 0 #d97706;
@@ -737,6 +757,16 @@ INDEX_HTML = r"""<!doctype html>
     .evidence-card strong { color: #3a2a05; }
     .mini-table { width: 100%; border-collapse: collapse; min-width: 0; font-size: 12px; }
     .mini-table th, .mini-table td { position: static; background: white; padding: 8px; border: 1px solid var(--line); }
+    .date-input {
+      border: 1px solid var(--line); border-radius: 8px; min-height: 38px; padding: 0 10px;
+      background: white; color: var(--ink); display: none;
+    }
+    .history-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .history-stat {
+      border: 1px solid var(--line); border-radius: 8px; background: white; padding: 10px;
+      display: grid; gap: 4px; min-width: 0;
+    }
+    .history-stat strong { font-size: 11px; color: var(--muted); }
     @media (max-width: 980px) {
       .shell { grid-template-columns: 1fr; }
       .pane { min-height: 70vh; }
@@ -746,6 +776,7 @@ INDEX_HTML = r"""<!doctype html>
       .toolbar { grid-template-columns: 1fr; }
       .detail-grid { grid-template-columns: 1fr; }
       .evidence-grid { grid-template-columns: 1fr; }
+      .history-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -798,8 +829,10 @@ INDEX_HTML = r"""<!doctype html>
             <button class="tab active" data-canvas="sector" id="sectorTab">Sectors</button>
             <button class="tab" data-canvas="stocks" id="stocksTab">Stocks</button>
             <button class="tab" data-canvas="best" id="bestTab">Best Pick</button>
+            <button class="tab" data-canvas="history" id="historyTab">History</button>
           </div>
           <input class="search" id="filterInput" placeholder="Filter sectors, tickers, or risk notes" />
+          <input class="date-input" type="date" id="historyDateInput" />
           <div class="row">
             <a class="btn" href="/file/US_Sector_Investment_Matrix_2026-06-13.md" target="_blank" id="openCurrentFile">Open Matrix</a>
           </div>
@@ -807,6 +840,7 @@ INDEX_HTML = r"""<!doctype html>
         <div class="table-wrap">
           <table id="sectorTable"></table>
           <div class="best-choice-panel" id="bestChoicePanel"></div>
+          <div class="history-panel" id="historyPanel"></div>
         </div>
         <div class="stock-detail" id="stockDetail"></div>
         <div class="jobs" id="jobs"></div>
@@ -829,15 +863,22 @@ INDEX_HTML = r"""<!doctype html>
   <div class="toast" id="toast"></div>
   <div class="ticker-tip" id="tickerTip"></div>
   <script>
+    const params = new URLSearchParams(window.location.search);
+    const requestedCanvas = params.get("canvas");
+    const initialCanvas = ["sector", "stocks", "best", "history"].includes(requestedCanvas)
+      ? requestedCanvas
+      : (localStorage.lazyinvestCanvas || "sector");
     const state = {
       sessionId: localStorage.lazyinvestSession || makeSession(),
       table: null,
       stockTable: null,
       stockDetails: {},
       bestChoice: null,
+      bestHistory: null,
       settings: null,
       polling: new Set(),
-      canvas: localStorage.lazyinvestCanvas || "sector",
+      canvas: initialCanvas,
+      historyDate: params.get("date") || "",
       selectedTicker: null
     };
     localStorage.lazyinvestSession = state.sessionId;
@@ -878,7 +919,7 @@ INDEX_HTML = r"""<!doctype html>
       document.getElementById("researchProfile").textContent = `research: ${p.research?.model || "gpt-5.5"} / ${p.research?.reasoning || "xhigh"}`;
     }
     function currentTable() {
-      if (state.canvas === "best") return null;
+      if (state.canvas === "best" || state.canvas === "history") return null;
       return state.canvas === "stocks" ? state.stockTable : state.table;
     }
     function bestChoiceTicker() {
@@ -893,10 +934,15 @@ INDEX_HTML = r"""<!doctype html>
         btn.classList.toggle("active", btn.dataset.canvas === state.canvas);
       });
       const link = document.getElementById("openCurrentFile");
+      const historyDate = document.getElementById("historyDateInput");
+      historyDate.style.display = state.canvas === "history" ? "block" : "none";
       const table = currentTable();
       if (state.canvas === "best" && state.bestChoice?.source) {
         link.href = "/file/" + state.bestChoice.source;
         link.textContent = "Open Best Pick";
+      } else if (state.canvas === "history" && state.bestHistory?.source) {
+        link.href = "/file/" + state.bestHistory.source;
+        link.textContent = "Open History";
       } else if (table?.source) {
         link.href = "/file/" + table.source;
         link.textContent = state.canvas === "stocks" ? "Open Stocks" : "Open Matrix";
@@ -909,12 +955,18 @@ INDEX_HTML = r"""<!doctype html>
         renderStockDetail(bestChoiceTicker());
         return;
       }
+      if (state.canvas === "history") {
+        renderHistory();
+        return;
+      }
       const table = currentTable();
       const el = document.getElementById("sectorTable");
       const panel = document.getElementById("bestChoicePanel");
+      const historyPanel = document.getElementById("historyPanel");
       const meta = document.getElementById("tableMeta");
       el.style.display = "table";
       panel.style.display = "none";
+      historyPanel.style.display = "none";
       if (!table || !table.headers?.length) {
         el.innerHTML = "<tbody><tr><td>No table found.</td></tr></tbody>";
         meta.textContent = "no table";
@@ -999,9 +1051,11 @@ INDEX_HTML = r"""<!doctype html>
     function renderBestChoice() {
       const tableEl = document.getElementById("sectorTable");
       const panel = document.getElementById("bestChoicePanel");
+      const historyPanel = document.getElementById("historyPanel");
       const meta = document.getElementById("tableMeta");
       tableEl.style.display = "none";
       panel.style.display = "block";
+      historyPanel.style.display = "none";
       const choice = state.bestChoice || {};
       const decision = choice.decision || {};
       const ticker = bestChoiceTicker();
@@ -1036,6 +1090,60 @@ INDEX_HTML = r"""<!doctype html>
             <strong>Risk Controls</strong>
             ${renderMiniTable(riskRows)}
           </div>
+        </div>
+      `;
+    }
+    function historyRows() {
+      return state.bestHistory?.rows || [];
+    }
+    function latestHistoryDate() {
+      return state.bestHistory?.latest_date || (historyRows().map(row => row.Date).filter(Boolean).sort().at(-1) || "");
+    }
+    function selectedHistoryRow() {
+      const rows = historyRows().slice().sort((a, b) => String(a.Date || "").localeCompare(String(b.Date || "")));
+      if (!rows.length) return null;
+      const selected = state.historyDate || latestHistoryDate();
+      return rows.find(row => row.Date === selected) || rows.filter(row => row.Date <= selected).at(-1) || rows.at(-1);
+    }
+    function renderHistory() {
+      const tableEl = document.getElementById("sectorTable");
+      const bestPanel = document.getElementById("bestChoicePanel");
+      const panel = document.getElementById("historyPanel");
+      const meta = document.getElementById("tableMeta");
+      const dateInput = document.getElementById("historyDateInput");
+      tableEl.style.display = "none";
+      bestPanel.style.display = "none";
+      panel.style.display = "block";
+      const rows = historyRows();
+      if (!state.historyDate) state.historyDate = latestHistoryDate();
+      dateInput.value = state.historyDate || "";
+      if (rows.length) {
+        const dates = rows.map(row => row.Date).filter(Boolean).sort();
+        dateInput.min = dates[0] || "";
+        dateInput.max = dates.at(-1) || "";
+      }
+      const selected = selectedHistoryRow();
+      meta.textContent = state.bestHistory?.source ? `${state.bestHistory.source} · ${rows.length} records` : "history";
+      if (!selected) {
+        panel.innerHTML = '<div class="muted">No best-pick history records yet.</div>';
+        renderStockDetail(null);
+        return;
+      }
+      const ticker = normalizeTicker(selected.Ticker || "");
+      renderStockDetail(ticker);
+      const timelineRows = rows.slice().sort((a, b) => String(b.Date || "").localeCompare(String(a.Date || "")));
+      panel.innerHTML = `
+        <div class="best-hero">
+          <span class="best-badge">HISTORICAL BEST PICK</span>
+          <h3>${tickerButton(ticker)} ${escapeHtml(selected.Company || "")}</h3>
+          <div class="history-grid">
+            <div class="history-stat"><strong>Date</strong><span>${escapeHtml(selected.Date || "")}</span></div>
+            <div class="history-stat"><strong>Price</strong><span>${escapeHtml(selected.Price || "")}</span></div>
+            <div class="history-stat"><strong>Market Cap</strong><span>${escapeHtml(selected["Market Cap"] || "")}</span></div>
+            <div class="history-stat"><strong>Growth Record</strong><span>${escapeHtml(selected["Price Change vs Previous Record"] || "")}</span></div>
+          </div>
+          <div class="detail-box"><strong>Evidence Summary</strong>${formatCell(selected["Evidence Summary"] || "")}</div>
+          <div class="detail-box"><strong>Timeline</strong>${renderMiniTable(timelineRows)}</div>
         </div>
       `;
     }
@@ -1090,6 +1198,8 @@ INDEX_HTML = r"""<!doctype html>
       state.stockTable = data.stock_table;
       state.stockDetails = data.stock_details?.items || {};
       state.bestChoice = data.best_choice;
+      state.bestHistory = data.best_history;
+      if (!state.historyDate) state.historyDate = latestHistoryDate();
       renderProfiles();
       renderMessages(data.messages);
       renderTable();
@@ -1177,6 +1287,10 @@ INDEX_HTML = r"""<!doctype html>
     document.getElementById("researchBtn").addEventListener("click", startResearch);
     document.getElementById("reloadBtn").addEventListener("click", loadState);
     document.getElementById("filterInput").addEventListener("input", renderTable);
+    document.getElementById("historyDateInput").addEventListener("input", event => {
+      state.historyDate = event.target.value;
+      renderTable();
+    });
     document.querySelectorAll("[data-canvas]").forEach(btn => {
       btn.addEventListener("click", () => {
         state.canvas = btn.dataset.canvas;
@@ -1267,6 +1381,7 @@ class LazyInvestHandler(BaseHTTPRequestHandler):
                         "stock_table": stock_table_snapshot(),
                         "stock_details": stock_details_snapshot(),
                         "best_choice": best_choice_snapshot(),
+                        "best_history": best_history_snapshot(),
                         "files": research_files(),
                         "messages": load_messages(session_id),
                         "jobs": recent_jobs(),
@@ -1281,6 +1396,9 @@ class LazyInvestHandler(BaseHTTPRequestHandler):
                 return
             if parsed.path == "/api/best-choice":
                 self.send_json({"ok": True, "best_choice": best_choice_snapshot()})
+                return
+            if parsed.path == "/api/history":
+                self.send_json({"ok": True, "history": best_history_snapshot()})
                 return
             if parsed.path == "/api/settings":
                 self.send_json({"ok": True, "settings": load_settings()})

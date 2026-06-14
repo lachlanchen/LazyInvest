@@ -27,6 +27,9 @@ Environment:
   LAZYINVEST_RESEARCH_REASONING    default reasoning override
   LAZYINVEST_CODEX_TIMEOUT_SECONDS max Codex runtime (default: 7200)
   LAZYINVEST_EXTRA_INSTRUCTION     appended to the research prompt
+  LAZYINVEST_UPDATE_SCREENSHOT     set to 0 to skip screenshot refresh
+  LAZYINVEST_SCREENSHOT_PORT       local Studio port for screenshot (default: 8792)
+  LAZYINVEST_SCREENSHOT_CANVAS     screenshot canvas tab (default: history)
 USAGE
 }
 
@@ -48,6 +51,10 @@ REMOTE="${LAZYINVEST_REMOTE:-origin}"
 BRANCH="${LAZYINVEST_BRANCH:-}"
 CODEX_TIMEOUT_SECONDS="${LAZYINVEST_CODEX_TIMEOUT_SECONDS:-7200}"
 CRON_TIME="${LAZYINVEST_CRON_TIME:-07:30}"
+UPDATE_SCREENSHOT="${LAZYINVEST_UPDATE_SCREENSHOT:-1}"
+SCREENSHOT_PORT="${LAZYINVEST_SCREENSHOT_PORT:-8792}"
+SCREENSHOT_CANVAS="${LAZYINVEST_SCREENSHOT_CANVAS:-history}"
+SCREENSHOT_PATH="$ROOT_DIR/figs/lazyinvest-studio.png"
 FORCE=0
 DRY_RUN=0
 NO_PUSH=0
@@ -76,7 +83,7 @@ cron_path_value() {
 
   local value="/usr/local/bin:/usr/bin:/bin"
   local bin dir
-  for bin in codex git bash rg; do
+  for bin in codex git bash rg python3 curl google-chrome chromium chromium-browser; do
     if command -v "$bin" >/dev/null 2>&1; then
       dir="$(dirname "$(command -v "$bin")")"
       case ":$value:" in
@@ -94,6 +101,56 @@ validate_research_text() {
     rg -n "$pattern" README.md US_*.md >/dev/null
   else
     grep -REn "$pattern" README.md US_*.md >/dev/null
+  fi
+}
+
+find_chrome() {
+  local candidate
+  for candidate in google-chrome google-chrome-stable chromium chromium-browser; do
+    if command -v "$candidate" >/dev/null 2>&1; then
+      command -v "$candidate"
+      return 0
+    fi
+  done
+  return 1
+}
+
+capture_studio_screenshot() {
+  [[ "$UPDATE_SCREENSHOT" == "0" ]] && {
+    log "Skipping screenshot refresh because LAZYINVEST_UPDATE_SCREENSHOT=0."
+    return 0
+  }
+
+  local chrome url base_url server_pid=""
+  chrome="$(find_chrome)" || die "No Chrome/Chromium executable found for screenshot refresh"
+  base_url="http://127.0.0.1:${SCREENSHOT_PORT}"
+  url="${base_url}/?canvas=${SCREENSHOT_CANVAS}&date=${TODAY}"
+  mkdir -p "$(dirname "$SCREENSHOT_PATH")"
+
+  if ! curl -fsS "${base_url}/api/state?session_id=screenshot-check" >/dev/null 2>&1; then
+    log "Starting temporary LazyInvest Studio server for screenshot on ${base_url}"
+    python3 scripts/lazyinvest_studio.py --host 127.0.0.1 --port "$SCREENSHOT_PORT" >/tmp/lazyinvest-screenshot-server.log 2>&1 &
+    server_pid="$!"
+    for _ in $(seq 1 30); do
+      if curl -fsS "${base_url}/api/state?session_id=screenshot-check" >/dev/null 2>&1; then
+        break
+      fi
+      sleep 1
+    done
+    curl -fsS "${base_url}/api/state?session_id=screenshot-check" >/dev/null 2>&1 || die "temporary Studio server did not become ready"
+  fi
+
+  log "Refreshing Studio screenshot: $SCREENSHOT_PATH"
+  if command -v timeout >/dev/null 2>&1; then
+    timeout 120s "$chrome" --headless --disable-gpu --no-sandbox --window-size=1440,1000 --virtual-time-budget=3000 --screenshot="$SCREENSHOT_PATH" "$url" >/tmp/lazyinvest-screenshot-chrome.log 2>&1
+  else
+    "$chrome" --headless --disable-gpu --no-sandbox --window-size=1440,1000 --virtual-time-budget=3000 --screenshot="$SCREENSHOT_PATH" "$url" >/tmp/lazyinvest-screenshot-chrome.log 2>&1
+  fi
+  [[ -s "$SCREENSHOT_PATH" ]] || die "screenshot was not created"
+
+  if [[ -n "$server_pid" ]]; then
+    kill "$server_pid" >/dev/null 2>&1 || true
+    wait "$server_pid" >/dev/null 2>&1 || true
   fi
 }
 
@@ -255,6 +312,10 @@ else
 fi
 log "Codex job finished. Final response: $AGENT_OUTPUT"
 
+log "Updating best-choice history"
+python3 scripts/update_best_choice_history.py --date "$TODAY"
+capture_studio_screenshot
+
 if [[ -n "$(git status --porcelain --untracked-files=all)" ]]; then
   log "Changed files after research:"
   git status --short --untracked-files=all
@@ -269,7 +330,7 @@ git diff --check
 validate_research_text
 
 shopt -s nullglob
-stage_paths=(US_*.md README.md data/settings.json i18n/README.*.md)
+stage_paths=(US_*.md README.md data/settings.json i18n/README.*.md figs/lazyinvest-studio.png)
 if [[ "${#stage_paths[@]}" -eq 0 ]]; then
   die "no eligible research files found to stage"
 fi

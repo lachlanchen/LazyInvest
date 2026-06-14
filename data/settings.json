@@ -23,5 +23,9 @@
   },
   "best_choice": {
     "source": "US_Best_Growth_Choice_2026-06-13.md"
+  },
+  "best_history": {
+    "source": "US_Best_Growth_History.md",
+    "heading": "Maintained Best Choice History"
   }
 }
