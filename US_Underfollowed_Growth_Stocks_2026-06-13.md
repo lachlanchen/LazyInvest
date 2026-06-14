@@ -1,6 +1,6 @@
 # U.S. Underfollowed Growth Stock Research Note
 
-Date: 2026-06-14
+Date: 2026-06-15
 Scope: U.S.-listed public companies with plausible high-growth potential that are smaller or less mainstream than the obvious mega-cap AI/software names.  
 Use: Research watchlist only. This is not personal financial advice, a valuation model, or a buy/sell recommendation.
 
@@ -16,20 +16,20 @@ The list deliberately avoids the most crowded AI winners where expectations are 
 
 ## Market Data Snapshot
 
-Market data below reflects the latest available trading data retrieved on 2026-06-14 in Asia/Hong_Kong. Because June 14 is a Sunday in Hong Kong and U.S. markets have not traded since Friday, the latest U.S. trading context remains the session ending 2026-06-12. Market caps and prices move daily and should be refreshed before any action.
+Market data below reflects Nasdaq delayed quote and summary endpoint values retrieved on 2026-06-15 in Asia/Hong_Kong. The endpoint showed U.S. market status closed and last-trade timestamps of Jun 11, 2026 for the maintained tickers, so treat prices and market caps as delayed source-check values, not live-market values. Refresh prices, market caps, short interest, filings, guidance, and news again before any action, especially after the June 15 U.S. session opens.
 
-Market-data source check: delayed quote feed retrieved on 2026-06-14; cross-check live quote pages before taking action, for example [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [NYSE YOU](https://www.nyse.com/quote/XNYS:YOU), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
+Market-data source check: Nasdaq delayed quote and summary endpoints retrieved on 2026-06-15; cross-check live quote pages before taking action, for example [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
 
 | Ticker | Company | Price | Market Cap | Broad Category |
 |---|---:|---:|---:|---|
-| `ALKT` | Alkami Technology | $15.19 | ~$1.59B | Digital banking SaaS |
-| `TARS` | Tarsus Pharmaceuticals | $61.95 | ~$2.66B | Commercial-stage ophthalmology pharma |
-| `GENI` | Genius Sports | $6.85 | ~$1.57B | Sports data, betting, and media technology |
-| `YOU` | Clear Secure | $50.25 | ~$5.09B | Identity/security platform |
-| `VCEL` | Vericel | $37.46 | ~$1.90B | Advanced therapy / medtech |
-| `CECO` | CECO Environmental | $96.74 | ~$3.45B | Industrial environmental and power infrastructure |
-| `WLDN` | Willdan Group | $96.30 | ~$1.48B | Energy efficiency and infrastructure services |
-| `BELFB` | Bel Fuse | $293.87 | ~$3.10B | Electronics, defense, data infrastructure |
+| `ALKT` | Alkami Technology | $15.19 | ~$1.63B | Digital banking SaaS |
+| `TARS` | Tarsus Pharmaceuticals | $61.95 | ~$2.67B | Commercial-stage ophthalmology pharma |
+| `GENI` | Genius Sports | $6.85 | ~$1.76B | Sports data, betting, and media technology |
+| `YOU` | Clear Secure | $50.25 | ~$6.72B | Identity/security platform |
+| `VCEL` | Vericel | $37.46 | ~$1.91B | Advanced therapy / medtech |
+| `CECO` | CECO Environmental | $96.74 | ~$5.65B | Industrial environmental and power infrastructure |
+| `WLDN` | Willdan Group | $96.30 | ~$1.46B | Energy efficiency and infrastructure services |
+| `BELFB` | Bel Fuse | $293.87 | ~$3.74B | Electronics, defense, data infrastructure |
 
 ## Selection Criteria
 
@@ -155,6 +155,7 @@ Recent evidence:
 - FY2026 free cash flow guidance was raised to at least $465M.
 - CLEAR and Samsung launched Samsung ID with CLEAR in Samsung Wallet for U.S. passport-backed digital ID use at more than 250 TSA checkpoints and select venues.
 - CLEAR and GDIT announced a strategic collaboration to deliver CLEAR1 identity-management and verification solutions to federal health and civilian agencies.
+- CLEAR launched Concierge Powered by CLEAR at Miami International Airport on June 1, 2026; pricing starts at $99 for departures and $199 for arrivals, and the MIA version is available to all travelers rather than only CLEAR+ members.
 
 Why it may be less noticed:
 
@@ -172,10 +173,10 @@ What to monitor:
 - Growth of CLEAR1 and non-airport bookings.
 - Member retention and pricing.
 - Airport rollout of eGates.
-- Samsung Wallet and GDIT adoption evidence.
+- Samsung Wallet, GDIT, and MIA Concierge adoption evidence.
 - Any privacy/security incidents or regulatory actions.
 
-Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement)
+Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement), [CLEAR MIA Concierge launch](https://ir.clearme.com/news-events/press-releases/detail/189/concierge-powered-by-clear-launched-at-mia-to-elevate)
 
 ### `VCEL` - Vericel
 

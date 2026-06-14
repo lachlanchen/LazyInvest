@@ -1,7 +1,7 @@
 # U.S. Sector Investment Matrix
 
-Date: 2026-06-14
-Market data context: Research refreshed on 2026-06-14 in Asia/Hong_Kong. Latest U.S. trading context remains the 2026-06-12 U.S. close because June 14 is a Sunday in Hong Kong and U.S. markets have not traded since Friday. Refresh prices, market caps, short interest, guidance, and news before taking action.
+Date: 2026-06-15
+Market data context: Research refreshed on 2026-06-15 in Asia/Hong_Kong. Nasdaq delayed quote and summary endpoints retrieved during this pass showed U.S. market status closed and last-trade timestamps of Jun 11, 2026 for maintained tickers; refresh prices, market caps, short interest, guidance, and news again before taking action, especially after the June 15 U.S. session opens.
 Scope: U.S.-listed stocks and ADR-accessible companies where relevant.  
 Use: Research watchlist only. This is not personal financial advice or a buy/sell instruction.
 
@@ -122,7 +122,7 @@ Hot and still good:
 
 Less noticed and good:
 
-- `YOU`: Identity platform with strong cash generation. Q1 2026 revenue was $253.0M, up 19.7%; bookings were up 40.8%; free cash flow was $185.5M; members reached 41.0M. Post-Q1 Samsung Wallet and GDIT partnerships support the broader digital-identity thesis beyond airport lanes. Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement)
+- `YOU`: Identity platform with strong cash generation. Q1 2026 revenue was $253.0M, up 19.7%; bookings were up 40.8%; free cash flow was $185.5M; members reached 41.0M. Post-Q1 Samsung Wallet, GDIT, and MIA Concierge updates support the broader digital-identity thesis beyond airport lanes. Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement), [CLEAR MIA Concierge launch](https://ir.clearme.com/news-events/press-releases/detail/189/concierge-powered-by-clear-launched-at-mia-to-elevate)
 
 Avoid / very unattractive:
 
