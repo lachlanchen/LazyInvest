@@ -76,7 +76,7 @@ cron_path_value() {
 
   local value="/usr/local/bin:/usr/bin:/bin"
   local bin dir
-  for bin in codex git bash; do
+  for bin in codex git bash rg; do
     if command -v "$bin" >/dev/null 2>&1; then
       dir="$(dirname "$(command -v "$bin")")"
       case ":$value:" in
@@ -86,6 +86,15 @@ cron_path_value() {
     fi
   done
   printf '%s' "$value"
+}
+
+validate_research_text() {
+  local pattern="not personal financial advice|Source:|Sources:|Date:"
+  if command -v rg >/dev/null 2>&1; then
+    rg -n "$pattern" README.md US_*.md >/dev/null
+  else
+    grep -REn "$pattern" README.md US_*.md >/dev/null
+  fi
 }
 
 cron_line() {
@@ -257,7 +266,7 @@ fi
 
 log "Running validation"
 git diff --check
-rg -n "not personal financial advice|Source:|Sources:|Date:" README.md US_*.md >/dev/null
+validate_research_text
 
 shopt -s nullglob
 stage_paths=(US_*.md README.md data/settings.json i18n/README.*.md)

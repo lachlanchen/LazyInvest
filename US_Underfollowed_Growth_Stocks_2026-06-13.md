@@ -1,6 +1,6 @@
 # U.S. Underfollowed Growth Stock Research Note
 
-Date: 2026-06-13  
+Date: 2026-06-14
 Scope: U.S.-listed public companies with plausible high-growth potential that are smaller or less mainstream than the obvious mega-cap AI/software names.  
 Use: Research watchlist only. This is not personal financial advice, a valuation model, or a buy/sell recommendation.
 
@@ -16,7 +16,9 @@ The list deliberately avoids the most crowded AI winners where expectations are 
 
 ## Market Data Snapshot
 
-Market data below reflects the latest available trading data retrieved on 2026-06-13, mostly from the U.S. session ending 2026-06-12. Market caps and prices move daily and should be refreshed before any action.
+Market data below reflects the latest available trading data retrieved on 2026-06-14 in Asia/Hong_Kong. Because June 14 is a Sunday in Hong Kong and U.S. markets have not traded since Friday, the latest U.S. trading context remains the session ending 2026-06-12. Market caps and prices move daily and should be refreshed before any action.
+
+Market-data source check: delayed quote feed retrieved on 2026-06-14; cross-check live quote pages before taking action, for example [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [NYSE YOU](https://www.nyse.com/quote/XNYS:YOU), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
 
 | Ticker | Company | Price | Market Cap | Broad Category |
 |---|---:|---:|---:|---|
@@ -72,7 +74,7 @@ What to monitor:
 - GAAP loss trend and stock-based compensation.
 - Large-bank or credit-union customer wins.
 
-Source: [Alkami Q1 2026 results](https://www.prnewswire.com/news-releases/alkami-announces-first-quarter-2026-financial-results-302757653.html)
+Source: [Alkami Q1 2026 results](https://investors.alkami.com/2026-04-29-Alkami-Announces-First-Quarter-2026-Financial-Results)
 
 ### `TARS` - Tarsus Pharmaceuticals
 
@@ -84,6 +86,7 @@ Recent evidence:
 - Management reaffirmed FY2026 XDEMVY net product sales guidance of $670M-$700M.
 - Management continues to state peak sales potential above $2B.
 - Nearly half of core eye care professionals are prescribing XDEMVY weekly.
+- Tarsus' presentations page lists a June 12, 2026 corporate presentation; the deck still shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
 - The company initiated a Phase 2 trial for TP-05, an oral tablet being studied for potential Lyme disease prevention, with topline data expected in H1 2027.
 
 Why it may be less noticed:
@@ -102,9 +105,9 @@ What to monitor:
 - Quarterly XDEMVY prescription trends.
 - Gross-to-net discounts.
 - Profitability timeline.
-- Pipeline updates for TP-05.
+- Pipeline updates for TP-04 and TP-05.
 
-Source: [Tarsus Q1 2026 results](https://www.globenewswire.com/news-release/2026/05/06/3289329/0/en/tarsus-reports-first-quarter-2026-financial-results-and-recent-business-achievements.html)
+Sources: [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/), [Tarsus presentations](https://ir.tarsusrx.com/events-and-presentations/presentations/)
 
 ### `GENI` - Genius Sports
 
@@ -150,6 +153,8 @@ Recent evidence:
 - Free cash flow was $185.5M in Q1.
 - Total CLEAR members reached 41.0M, up 31.3%.
 - FY2026 free cash flow guidance was raised to at least $465M.
+- CLEAR and Samsung launched Samsung ID with CLEAR in Samsung Wallet for U.S. passport-backed digital ID use at more than 250 TSA checkpoints and select venues.
+- CLEAR and GDIT announced a strategic collaboration to deliver CLEAR1 identity-management and verification solutions to federal health and civilian agencies.
 
 Why it may be less noticed:
 
@@ -167,9 +172,10 @@ What to monitor:
 - Growth of CLEAR1 and non-airport bookings.
 - Member retention and pricing.
 - Airport rollout of eGates.
+- Samsung Wallet and GDIT adoption evidence.
 - Any privacy/security incidents or regulatory actions.
 
-Source: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results)
+Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement)
 
 ### `VCEL` - Vericel
 
@@ -208,7 +214,7 @@ Source: [Vericel Q1 2026 results](https://investors.vcel.com/news-releases/news-
 
 ### `CECO` - CECO Environmental
 
-CECO sells industrial air, water, emissions, and energy-related equipment. The growth thesis is industrial reshoring, electricity demand, natural gas power generation, and infrastructure needed for data centers and electrification.
+CECO sells industrial air, water, emissions, and energy-related equipment. After closing the Thermon acquisition, the thesis now includes a larger process-heating and thermal-management platform tied to industrial power, data-center, semiconductor, reshoring, and electrification demand.
 
 Recent evidence:
 
@@ -216,19 +222,21 @@ Recent evidence:
 - Backlog reached $1.035B, up 72%.
 - Revenue was $205.9M, up 17%.
 - Adjusted EBITDA was $20.4M, up 46%.
-- Management raised FY2026 guidance to $940M-$1.0B of revenue and $120M-$140M of adjusted EBITDA.
+- Management raised standalone FY2026 guidance in April to $940M-$1.0B of revenue and $120M-$140M of non-GAAP adjusted EBITDA.
 - Management cited large-scale projects tied to natural gas power generation, data centers, AI computing, reshoring, and electrification.
-- The proposed Thermon transaction is expected to add data-center and power-market exposure, but also adds integration risk.
+- CECO completed the Thermon acquisition on June 1, 2026.
+- CECO's June 9 combined-company outlook calls for FY2026 revenue of $1.275B-$1.375B, non-GAAP adjusted EBITDA of $195M-$225M, and free cash flow of at least 55% of adjusted EBITDA; the guide includes seven months of Thermon contribution.
+- Management says it remains confident in $40M or more of cost synergies, but this is now a major execution item, not only upside optionality.
 
 Why it may be less noticed:
 
-CECO is an industrial company rather than a clean AI stock. It may benefit from AI infrastructure power demand indirectly, without being priced exactly like a semiconductor or data-center REIT.
+CECO is an industrial company rather than a clean AI stock. It may benefit from AI infrastructure power and thermal-management demand indirectly, without being priced exactly like a semiconductor or data-center REIT.
 
 Key risks:
 
 - Cyclical industrial orders.
 - Lower-margin backlog mix.
-- Thermon merger integration.
+- Thermon integration, synergy capture, and acquisition-related leverage.
 - Project timing and working-capital swings.
 
 What to monitor:
@@ -237,8 +245,9 @@ What to monitor:
 - Backlog quality and gross margin.
 - Free cash flow conversion.
 - Thermon synergies and combined-company leverage.
+- Whether combined-company guidance converts to GAAP earnings and operating cash flow, not only non-GAAP adjusted EBITDA.
 
-Source: [CECO Q1 2026 results](https://www.globenewswire.com/news-release/2026/04/28/3282406/0/en/ceco-environmental-reports-first-quarter-2026-results.html)
+Sources: [CECO Q1 2026 results](https://www.globenewswire.com/news-release/2026/04/28/3282406/0/en/ceco-environmental-reports-first-quarter-2026-results.html), [CECO completes Thermon acquisition](https://www.globenewswire.com/news-release/2026/06/01/3304414/0/en/ceco-environmental-completes-acquisition-of-thermon-group-holdings.html), [CECO Thermon post-close update](https://www.globenewswire.com/news-release/2026/06/09/3308707/0/en/ceco-environmental-provides-post-closing-update-on-thermon-transaction.html)
 
 ### `WLDN` - Willdan Group
 
@@ -271,7 +280,7 @@ What to monitor:
 - Cash conversion.
 - Commercial customer mix after the Burton Energy acquisition.
 
-Source: [Willdan Q1 2026 results](https://www.nasdaq.com/press-release/willdan-group-reports-first-quarter-results-2026-05-07)
+Source: [Willdan Q1 2026 results](https://ir.willdangroup.com/news-releases/news-release-details/willdan-group-reports-first-quarter-results-2)
 
 ### `BELFB` - Bel Fuse
 
@@ -357,7 +366,7 @@ Source:
 
 ### Best AI-Adjacent Exposure
 
-1. `CECO` - Backlog, natural gas power exposure, data-center power demand, Thermon transaction.
+1. `CECO` - Backlog, natural gas power exposure, data-center power demand, and closed Thermon transaction with higher combined-company guidance.
 2. `BELFB` - Data-center connectivity, power conversion, defense, and high-performance compute component exposure.
 3. `WLDN` - Energy-efficiency services and commercial energy optimization.
 

@@ -1,7 +1,7 @@
 # U.S. Sector Investment Matrix
 
-Date: 2026-06-13  
-Market data context: U.S. market close around 2026-06-12. Refresh prices, market caps, short interest, guidance, and news before taking action.  
+Date: 2026-06-14
+Market data context: Research refreshed on 2026-06-14 in Asia/Hong_Kong. Latest U.S. trading context remains the 2026-06-12 U.S. close because June 14 is a Sunday in Hong Kong and U.S. markets have not traded since Friday. Refresh prices, market caps, short interest, guidance, and news before taking action.
 Scope: U.S.-listed stocks and ADR-accessible companies where relevant.  
 Use: Research watchlist only. This is not personal financial advice or a buy/sell instruction.
 
@@ -87,8 +87,8 @@ Hot and still good:
 
 Less noticed and good:
 
-- `CECO`: Industrial air, water, emissions, and energy infrastructure. Q1 2026 orders were $449.5M, up 97%; backlog was $1.035B, up 72%; guidance was raised to $940M-$1.0B revenue and $120M-$140M adjusted EBITDA. Source: [CECO Q1 2026 results](https://www.globenewswire.com/news-release/2026/04/28/3282406/0/en/ceco-environmental-reports-first-quarter-2026-results.html)
-- `WLDN`: Energy efficiency and infrastructure services. FY2026 targets include $410M-$425M net revenue and $100M-$105M adjusted EBITDA. Source: [Willdan Q1 2026 results](https://www.nasdaq.com/press-release/willdan-group-reports-first-quarter-results-2026-05-07)
+- `CECO`: Industrial air, water, emissions, and power/thermal infrastructure. Q1 2026 orders were $449.5M, up 97%; backlog was $1.035B, up 72%. CECO closed the Thermon acquisition on June 1, 2026, and the June 9 combined-company outlook calls for 2026 revenue of $1.275B-$1.375B, non-GAAP adjusted EBITDA of $195M-$225M, and free cash flow of at least 55% of adjusted EBITDA. Sources: [CECO Q1 2026 results](https://www.globenewswire.com/news-release/2026/04/28/3282406/0/en/ceco-environmental-reports-first-quarter-2026-results.html), [CECO Thermon post-close update](https://www.globenewswire.com/news-release/2026/06/09/3308707/0/en/ceco-environmental-provides-post-closing-update-on-thermon-transaction.html)
+- `WLDN`: Energy efficiency and infrastructure services. FY2026 targets include $410M-$425M net revenue and $100M-$105M adjusted EBITDA. Source: [Willdan Q1 2026 results](https://ir.willdangroup.com/news-releases/news-release-details/willdan-group-reports-first-quarter-results-2)
 - `BELFB`: Component exposure to datacenter, defense, and high-performance compute. Source: [Bel Fuse Q1 2026 results](https://ir.belfuse.com/node/18386/pdf)
 
 Avoid / very unattractive:
@@ -107,6 +107,7 @@ What to monitor:
 - Utility capex plans.
 - Backlog quality, not just backlog size.
 - Gross margin on backlog conversion.
+- CECO/Thermon integration, synergy realization, and acquisition-related leverage.
 - Nuclear restart/regulatory timelines.
 
 ### 3. Cybersecurity, Identity, and Data Protection
@@ -121,7 +122,7 @@ Hot and still good:
 
 Less noticed and good:
 
-- `YOU`: Identity platform with strong cash generation. Q1 2026 revenue was $253.0M, up 19.7%; bookings were up 40.8%; free cash flow was $185.5M; members reached 41.0M. Source: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results)
+- `YOU`: Identity platform with strong cash generation. Q1 2026 revenue was $253.0M, up 19.7%; bookings were up 40.8%; free cash flow was $185.5M; members reached 41.0M. Post-Q1 Samsung Wallet and GDIT partnerships support the broader digital-identity thesis beyond airport lanes. Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement)
 
 Avoid / very unattractive:
 
@@ -147,7 +148,7 @@ Hot and still good:
 
 Less noticed and good:
 
-- `TARS`: XDEMVY commercial ramp remains strong. Q1 2026 sales were $145.4M, up more than 85%; FY2026 guidance was $670M-$700M. Source: [Tarsus Q1 2026 results](https://www.globenewswire.com/news-release/2026/05/06/3289329/0/en/tarsus-reports-first-quarter-2026-financial-results-and-recent-business-achievements.html)
+- `TARS`: XDEMVY commercial ramp remains strong. Q1 2026 sales were $145.4M, up more than 85%; FY2026 guidance was $670M-$700M. Source: [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/)
 - `VCEL`: Specialized medtech/advanced therapy. Q1 2026 revenue was $68.4M, up 30%; gross margin was 72%; free cash flow was positive; no debt; guidance was raised. Source: [Vericel Q1 2026 results](https://investors.vcel.com/news-releases/news-release-details/vericel-reports-first-quarter-2026-financial-results-and-raises)
 - `TMDX`: Organ transplant platform. Q1 2026 revenue was $173.9M, up 21%; cash was $461.7M. Risk: margins and operating income compressed as the company invests. Source: [TransMedics Q1 2026 results](https://investors.transmedics.com/news-releases/news-release-details/transmedics-reports-first-quarter-2026-financial-results/)
 - `LNTH`: Medical imaging and radiopharmaceuticals. Q1 2026 revenue was $377.3M, with GAAP diluted EPS of $1.80 and PYLARIFY TruVu FDA approval. Source: [Lantheus Q1 2026 results](https://investor.lantheus.com/news-releases/news-release-details/lantheus-reports-first-quarter-2026-financial-results-and)
@@ -218,7 +219,7 @@ Hot and good but high beta:
 
 Less noticed and good:
 
-- `ALKT`: Digital banking SaaS for banks and credit unions. Q1 2026 revenue was $126.1M, up 28.9%; ARR was $493.6M, up 22%; adjusted EBITDA was $22.3M. Source: [Alkami Q1 2026 results](https://www.prnewswire.com/news-releases/alkami-announces-first-quarter-2026-financial-results-302757653.html)
+- `ALKT`: Digital banking SaaS for banks and credit unions. Q1 2026 revenue was $126.1M, up 28.9%; ARR was $493.6M, up 22%; adjusted EBITDA was $22.3M. Source: [Alkami Q1 2026 results](https://investors.alkami.com/2026-04-29-Alkami-Announces-First-Quarter-2026-Financial-Results)
 - `TOST`: Restaurant software/payments platform. Q1 2026 ARR was $2.2B, up 26%; locations grew 22%; GPV was $51.3B, up 22%. Source: [Toast Q1 2026 results](https://www.businesswire.com/news/home/20260507253488/en/Toast-Announces-First-Quarter-2026-Financial-Results)
 - `GENI`: Sports data and betting infrastructure. Q1 2026 revenue grew 31%; FY2026 guidance was raised to about $990M-$1.01B revenue and $270M-$280M adjusted EBITDA. Source: [Genius Sports Q1 2026 results](https://investors.geniussports.com/news/news-details/2026/Genius-Sports-Reports-31-Revenue-Growth-and-21-Adjusted-EBITDA-Growth-Raises-2026-Guidance-Targeting-28-Adjusted-EBITDA-Margin-Following-Legend-Acquisition/default.aspx)
 

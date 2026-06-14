@@ -1,8 +1,8 @@
 # Single Best Huge-Growth Choice
 
-Date: 2026-06-13
+Date: 2026-06-14
 
-Market data context: U.S. market data and company facts should be refreshed before any investment action. This note is a research watchlist annotation only, not personal financial advice or a buy/sell recommendation.
+Market data context: Research refreshed on 2026-06-14 in Asia/Hong_Kong. Latest U.S. trading context remains the 2026-06-12 U.S. close because U.S. markets have not traded since Friday. This note is a research watchlist annotation only, not personal financial advice or a buy/sell recommendation.
 
 ## Decision Snapshot
 
@@ -13,7 +13,7 @@ Market data context: U.S. market data and company facts should be refreshed befo
 | Category | Commercial-stage ophthalmology pharma |
 | Selection | BEST HUGE-GROWTH CHOICE |
 | Thesis | Tarsus has the strongest asymmetric growth setup in the maintained watchlist because XDEMVY is already commercial, still growing quickly, and management continues to frame the product as a category-creating asset with more than $2B of peak sales potential. |
-| Why Single Best | Among the watchlist names, `TARS` combines the clearest near-term revenue acceleration, a very large product-sales target relative to current scale, and source-verifiable commercial adoption. The tradeoff is high product-concentration risk. |
+| Why Single Best | Among the watchlist names, `TARS` still combines the clearest near-term revenue acceleration, a very large product-sales target relative to current scale, and source-verifiable commercial adoption. The tradeoff is high product-concentration risk. |
 
 ## Evidence and Proof
 
@@ -22,6 +22,7 @@ Market data context: U.S. market data and company facts should be refreshed befo
 | Q1 2026 XDEMVY net product sales were $145.4M, up more than 85% year over year. | Confirms the thesis is already revenue-backed, not only pipeline optionality. | [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/) |
 | Management reaffirmed FY2026 XDEMVY net product sales guidance of $670M-$700M. | Gives a concrete full-year commercial target that can be checked each quarter. | [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/) |
 | Management reaffirmed XDEMVY peak sales potential exceeding $2B. | Creates the largest visible upside bridge among the underfollowed watchlist names if execution continues. | [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/) |
+| Tarsus' presentations page lists a June 12, 2026 corporate presentation; the deck still shows the $670M-$700M 2026 XDEMVY net-sales guide, $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents. | Adds a current investor-deck cross-check after the Q1 release and keeps the thesis anchored in company-published numbers. | [Tarsus presentations](https://ir.tarsusrx.com/events-and-presentations/presentations/), [Tarsus corporate presentation PDF](https://ir.tarsusrx.com/static-files/a4f36edb-9d92-46a2-a8c4-49a3efd6ea94) |
 | XDEMVY full-year 2025 net product sales were $451.4M, versus $180.1M in 2024. | Shows the ramp was already visible before Q1 2026 and was not a single-quarter anomaly. | [Tarsus FY2025 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-fourth-quarter-and-full-year-2025-financial) |
 | Tarsus reported more than 90% commercial, Medicare, and Medicaid covered lives for XDEMVY in FY2025. | Coverage supports continued prescription conversion and helps reduce reimbursement friction. | [Tarsus FY2025 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-fourth-quarter-and-full-year-2025-financial) |
 | The Tarsus financials page lists the May 6, 2026 Form 10-Q. | Confirms the latest quarterly filing is available for validation beyond press-release language. | [Tarsus financial filings](https://ir.tarsusrx.com/financial-information) |
@@ -31,7 +32,7 @@ Market data context: U.S. market data and company facts should be refreshed befo
 | Ticker | Why Not the Single Best Huge-Growth Choice |
 |---|---|
 | `GENI` | Strong 31% revenue growth and raised guidance, but the Legend acquisition adds leverage, integration risk, and widened Q1 net loss. |
-| `CECO` | Very strong orders and backlog, but industrial project timing, free-cash-flow cyclicality, and Thermon integration make the upside less clean than the XDEMVY product ramp. |
+| `CECO` | Stronger after Thermon closed and CECO issued higher combined-company guidance, but the thesis now carries acquisition integration, leverage, synergy, working-capital, and project-timing risk; much of the profit guide is framed through non-GAAP adjusted EBITDA. |
 | `YOU` | Higher-quality cash generator, but the growth rate and upside asymmetry are lower than `TARS`. |
 | `VCEL` | Good 30% revenue growth, high gross margin, no debt, and positive free cash flow, but the upside path is steadier medtech growth rather than a category-creation breakout. |
 | `ALKT` | Solid vertical SaaS growth, but GAAP losses and bank software buying cycles make the upside less immediate. |
