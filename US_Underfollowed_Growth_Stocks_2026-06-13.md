@@ -1,6 +1,6 @@
 # U.S. Underfollowed Growth Stock Research Note
 
-Date: 2026-06-15
+Date: 2026-06-16
 Scope: U.S.-listed public companies with plausible high-growth potential that are smaller or less mainstream than the obvious mega-cap AI/software names.  
 Use: Research watchlist only. This is not personal financial advice, a valuation model, or a buy/sell recommendation.
 
@@ -16,20 +16,20 @@ The list deliberately avoids the most crowded AI winners where expectations are 
 
 ## Market Data Snapshot
 
-Market data below reflects Nasdaq delayed quote and summary endpoint values retrieved on 2026-06-15 in Asia/Hong_Kong. The endpoint showed U.S. market status closed and last-trade timestamps of Jun 11, 2026 for the maintained tickers, so treat prices and market caps as delayed source-check values, not live-market values. Refresh prices, market caps, short interest, filings, guidance, and news again before any action, especially after the June 15 U.S. session opens.
+Market data below reflects Nasdaq delayed quote and summary endpoint values retrieved on 2026-06-16 in Asia/Hong_Kong. The endpoints showed U.S. market status After-Hours and regular-session close timestamps of Jun 15, 2026 at 4:00 PM ET for the maintained tickers; the table uses regular-session close prices and Nasdaq summary market-cap values, not after-hours last-sale prices. Refresh prices, market caps, short interest, filings, guidance, and news again before any action, especially after the June 16, 2026 U.S. session opens.
 
-Market-data source check: Nasdaq delayed quote and summary endpoints retrieved on 2026-06-15; cross-check live quote pages before taking action, for example [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
+Market-data source check: Nasdaq delayed quote and summary endpoints retrieved on 2026-06-16; cross-check live quote pages before taking action, for example [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
 
 | Ticker | Company | Price | Market Cap | Broad Category |
 |---|---:|---:|---:|---|
-| `ALKT` | Alkami Technology | $15.19 | ~$1.63B | Digital banking SaaS |
-| `TARS` | Tarsus Pharmaceuticals | $61.95 | ~$2.67B | Commercial-stage ophthalmology pharma |
-| `GENI` | Genius Sports | $6.85 | ~$1.76B | Sports data, betting, and media technology |
-| `YOU` | Clear Secure | $50.25 | ~$6.72B | Identity/security platform |
-| `VCEL` | Vericel | $37.46 | ~$1.91B | Advanced therapy / medtech |
-| `CECO` | CECO Environmental | $96.74 | ~$5.65B | Industrial environmental and power infrastructure |
-| `WLDN` | Willdan Group | $96.30 | ~$1.46B | Energy efficiency and infrastructure services |
-| `BELFB` | Bel Fuse | $293.87 | ~$3.74B | Electronics, defense, data infrastructure |
+| `ALKT` | Alkami Technology | $15.31 | ~$1.64B | Digital banking SaaS |
+| `TARS` | Tarsus Pharmaceuticals | $61.85 | ~$2.66B | Commercial-stage ophthalmology pharma |
+| `GENI` | Genius Sports | $6.88 | ~$1.77B | Sports data, betting, and media technology |
+| `YOU` | Clear Secure | $51.68 | ~$6.91B | Identity/security platform |
+| `VCEL` | Vericel | $38.29 | ~$1.96B | Advanced therapy / medtech |
+| `CECO` | CECO Environmental | $95.01 | ~$5.55B | Industrial environmental and power infrastructure |
+| `WLDN` | Willdan Group | $95.51 | ~$1.44B | Energy efficiency and infrastructure services |
+| `BELFB` | Bel Fuse | $302.15 | ~$3.84B | Electronics, defense, data infrastructure |
 
 ## Selection Criteria
 
@@ -56,6 +56,7 @@ Recent evidence:
 - Digital banking users reached 23.0M, with revenue per registered user up 9%.
 - Adjusted EBITDA was $22.3M, versus $12.1M a year earlier.
 - FY2026 revenue guidance is $527.1M-$530.9M.
+- The board authorized a $100M share repurchase program, adding a capital-allocation signal alongside the growth thesis.
 
 Why it may be less noticed:
 
@@ -86,7 +87,7 @@ Recent evidence:
 - Management reaffirmed FY2026 XDEMVY net product sales guidance of $670M-$700M.
 - Management continues to state peak sales potential above $2B.
 - Nearly half of core eye care professionals are prescribing XDEMVY weekly.
-- Tarsus' presentations page lists a June 12, 2026 corporate presentation; the deck still shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
+- Tarsus' presentations page still listed the June 12, 2026 corporate presentation as the latest deck during the June 16 source check; the deck shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
 - The company initiated a Phase 2 trial for TP-05, an oral tablet being studied for potential Lyme disease prevention, with topline data expected in H1 2027.
 
 Why it may be less noticed:
@@ -107,7 +108,7 @@ What to monitor:
 - Profitability timeline.
 - Pipeline updates for TP-04 and TP-05.
 
-Sources: [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/), [Tarsus presentations](https://ir.tarsusrx.com/events-and-presentations/presentations/)
+Sources: [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/), [Tarsus presentations](https://ir.tarsusrx.com/events-and-presentations/presentations/), [Tarsus news and presentations](https://ir.tarsusrx.com/news-presentations/)
 
 ### `GENI` - Genius Sports
 
@@ -153,6 +154,7 @@ Recent evidence:
 - Free cash flow was $185.5M in Q1.
 - Total CLEAR members reached 41.0M, up 31.3%.
 - FY2026 free cash flow guidance was raised to at least $465M.
+- CLEAR and Expedia announced an integration that lets Expedia travelers sign up for CLEAR+ and CLEAR Concierge, with One Key tiered pricing and placement across Expedia discovery, flight shopping, and trip management.
 - CLEAR and Samsung launched Samsung ID with CLEAR in Samsung Wallet for U.S. passport-backed digital ID use at more than 250 TSA checkpoints and select venues.
 - CLEAR and GDIT announced a strategic collaboration to deliver CLEAR1 identity-management and verification solutions to federal health and civilian agencies.
 - CLEAR launched Concierge Powered by CLEAR at Miami International Airport on June 1, 2026; pricing starts at $99 for departures and $199 for arrivals, and the MIA version is available to all travelers rather than only CLEAR+ members.
@@ -173,10 +175,10 @@ What to monitor:
 - Growth of CLEAR1 and non-airport bookings.
 - Member retention and pricing.
 - Airport rollout of eGates.
-- Samsung Wallet, GDIT, and MIA Concierge adoption evidence.
+- Expedia, Samsung Wallet, GDIT, and MIA Concierge adoption evidence.
 - Any privacy/security incidents or regulatory actions.
 
-Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement), [CLEAR MIA Concierge launch](https://ir.clearme.com/news-events/press-releases/detail/189/concierge-powered-by-clear-launched-at-mia-to-elevate)
+Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Expedia partnership](https://ir.clearme.com/news-events/press-releases/detail/186/clear-partners-with-expedia-to-bring-a-more-seamless), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement), [CLEAR MIA Concierge launch](https://ir.clearme.com/news-events/press-releases/detail/189/concierge-powered-by-clear-launched-at-mia-to-elevate)
 
 ### `VCEL` - Vericel
 
@@ -262,6 +264,7 @@ Recent evidence:
 - Adjusted diluted EPS was $0.91, up 44.4%.
 - FY2026 targets are $410M-$425M net revenue, $100M-$105M adjusted EBITDA, and $4.90-$5.05 adjusted diluted EPS.
 - Long-term goals call for 15%-20% annual growth including acquisitions and high-20s adjusted EBITDA-to-net-revenue margin.
+- Willdan acquired Burton Energy Group on May 4, 2026; Burton reported about $103M of 2025 contract revenue, $15M of net revenue, and $7M of EBITDA, and management said the deal should be accretive to 2026 adjusted EPS.
 
 Why it may be less noticed:
 
@@ -281,7 +284,7 @@ What to monitor:
 - Cash conversion.
 - Commercial customer mix after the Burton Energy acquisition.
 
-Source: [Willdan Q1 2026 results](https://ir.willdangroup.com/news-releases/news-release-details/willdan-group-reports-first-quarter-results-2)
+Sources: [Willdan Q1 2026 results](https://ir.willdangroup.com/news-releases/news-release-details/willdan-group-reports-first-quarter-results-2), [Willdan Burton acquisition](https://www.willdan.com/newsdetail?NewsID=willdan-expands-commercial-energy-capabilities-with-acquisition-of-burton-energy-group)
 
 ### `BELFB` - Bel Fuse
 
