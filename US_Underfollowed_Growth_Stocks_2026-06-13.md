@@ -1,6 +1,6 @@
 # U.S. Underfollowed Growth Stock Research Note
 
-Date: 2026-06-16
+Date: 2026-06-17
 Scope: U.S.-listed public companies with plausible high-growth potential that are smaller or less mainstream than the obvious mega-cap AI/software names.  
 Use: Research watchlist only. This is not personal financial advice, a valuation model, or a buy/sell recommendation.
 
@@ -16,20 +16,20 @@ The list deliberately avoids the most crowded AI winners where expectations are 
 
 ## Market Data Snapshot
 
-Market data below reflects Nasdaq delayed quote and summary endpoint values retrieved on 2026-06-16 in Asia/Hong_Kong. The endpoints showed U.S. market status After-Hours and regular-session close timestamps of Jun 15, 2026 at 4:00 PM ET for the maintained tickers; the table uses regular-session close prices and Nasdaq summary market-cap values, not after-hours last-sale prices. Refresh prices, market caps, short interest, filings, guidance, and news again before any action, especially after the June 16, 2026 U.S. session opens.
+Market data below reflects Nasdaq delayed quote and summary endpoint values retrieved on 2026-06-17 in Asia/Hong_Kong. The endpoints showed U.S. market status After-Hours, primary-data timestamps around Jun 16, 2026 7:39-7:40 PM ET, and regular-session close timestamps of Jun 16, 2026 at 4:00 PM ET for the maintained tickers; the table uses regular-session close prices and Nasdaq summary market-cap values, not after-hours last-sale prices. Refresh prices, market caps, short interest, filings, guidance, and news again before any action, especially after the June 17, 2026 U.S. session opens.
 
-Market-data source check: Nasdaq delayed quote and summary endpoints retrieved on 2026-06-16; cross-check live quote pages before taking action, for example [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
+Market-data source check: Nasdaq delayed quote and summary endpoints retrieved on 2026-06-17; cross-check live quote pages before taking action, for example [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
 
 | Ticker | Company | Price | Market Cap | Broad Category |
 |---|---:|---:|---:|---|
-| `ALKT` | Alkami Technology | $15.31 | ~$1.64B | Digital banking SaaS |
-| `TARS` | Tarsus Pharmaceuticals | $61.85 | ~$2.66B | Commercial-stage ophthalmology pharma |
+| `ALKT` | Alkami Technology | $15.55 | ~$1.66B | Digital banking SaaS |
+| `TARS` | Tarsus Pharmaceuticals | $60.80 | ~$2.62B | Commercial-stage ophthalmology pharma |
 | `GENI` | Genius Sports | $6.88 | ~$1.77B | Sports data, betting, and media technology |
-| `YOU` | Clear Secure | $51.68 | ~$6.91B | Identity/security platform |
-| `VCEL` | Vericel | $38.29 | ~$1.96B | Advanced therapy / medtech |
-| `CECO` | CECO Environmental | $95.01 | ~$5.55B | Industrial environmental and power infrastructure |
-| `WLDN` | Willdan Group | $95.51 | ~$1.44B | Energy efficiency and infrastructure services |
-| `BELFB` | Bel Fuse | $302.15 | ~$3.84B | Electronics, defense, data infrastructure |
+| `YOU` | Clear Secure | $52.76 | ~$7.05B | Identity/security platform |
+| `VCEL` | Vericel | $38.46 | ~$1.96B | Advanced therapy / medtech |
+| `CECO` | CECO Environmental | $92.55 | ~$5.41B | Industrial environmental and power infrastructure |
+| `WLDN` | Willdan Group | $93.99 | ~$1.42B | Energy efficiency and infrastructure services |
+| `BELFB` | Bel Fuse | $293.22 | ~$3.73B | Electronics, defense, data infrastructure |
 
 ## Selection Criteria
 
@@ -57,6 +57,7 @@ Recent evidence:
 - Adjusted EBITDA was $22.3M, versus $12.1M a year earlier.
 - FY2026 revenue guidance is $527.1M-$530.9M.
 - The board authorized a $100M share repurchase program, adding a capital-allocation signal alongside the growth thesis.
+- The June 17 HK source check found Alkami's June 10, 2026 FDX API integration with Yodlee as the latest IR-page item; management framed it as a move toward credential-free, consent-based data sharing, fewer login disruptions, and stronger security.
 
 Why it may be less noticed:
 
@@ -74,8 +75,9 @@ What to monitor:
 - Net retention and revenue per user.
 - GAAP loss trend and stock-based compensation.
 - Large-bank or credit-union customer wins.
+- FDX/API adoption and whether integration breadth improves user activation or retention.
 
-Source: [Alkami Q1 2026 results](https://investors.alkami.com/2026-04-29-Alkami-Announces-First-Quarter-2026-Financial-Results)
+Sources: [Alkami Q1 2026 results](https://investors.alkami.com/2026-04-29-Alkami-Announces-First-Quarter-2026-Financial-Results), [Alkami FDX/Yodlee integration](https://investors.alkami.com/2026-06-10-Alkami-Strengthens-Open-Banking-Through-API-Integration-with-FDX-and-Yodlee)
 
 ### `TARS` - Tarsus Pharmaceuticals
 
@@ -87,7 +89,7 @@ Recent evidence:
 - Management reaffirmed FY2026 XDEMVY net product sales guidance of $670M-$700M.
 - Management continues to state peak sales potential above $2B.
 - Nearly half of core eye care professionals are prescribing XDEMVY weekly.
-- Tarsus' presentations page still listed the June 12, 2026 corporate presentation as the latest deck during the June 16 source check; the deck shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
+- Tarsus' presentations page still listed the June 12, 2026 corporate presentation as the latest deck during the June 17 HK source check; the deck shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
 - The company initiated a Phase 2 trial for TP-05, an oral tablet being studied for potential Lyme disease prevention, with topline data expected in H1 2027.
 
 Why it may be less noticed:
@@ -158,6 +160,7 @@ Recent evidence:
 - CLEAR and Samsung launched Samsung ID with CLEAR in Samsung Wallet for U.S. passport-backed digital ID use at more than 250 TSA checkpoints and select venues.
 - CLEAR and GDIT announced a strategic collaboration to deliver CLEAR1 identity-management and verification solutions to federal health and civilian agencies.
 - CLEAR launched Concierge Powered by CLEAR at Miami International Airport on June 1, 2026; pricing starts at $99 for departures and $199 for arrivals, and the MIA version is available to all travelers rather than only CLEAR+ members.
+- CLEAR launched at Indianapolis International Airport on June 16, 2026, adding CLEAR+ Lanes, eGates, and Concierge; the release said CLEAR now serves more than 8.2M Active CLEAR+ members at 62 airports and more than 41M total members.
 
 Why it may be less noticed:
 
@@ -175,10 +178,10 @@ What to monitor:
 - Growth of CLEAR1 and non-airport bookings.
 - Member retention and pricing.
 - Airport rollout of eGates.
-- Expedia, Samsung Wallet, GDIT, and MIA Concierge adoption evidence.
+- Expedia, Samsung Wallet, GDIT, MIA Concierge, and Indianapolis airport adoption evidence.
 - Any privacy/security incidents or regulatory actions.
 
-Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Expedia partnership](https://ir.clearme.com/news-events/press-releases/detail/186/clear-partners-with-expedia-to-bring-a-more-seamless), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement), [CLEAR MIA Concierge launch](https://ir.clearme.com/news-events/press-releases/detail/189/concierge-powered-by-clear-launched-at-mia-to-elevate)
+Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Expedia partnership](https://ir.clearme.com/news-events/press-releases/detail/186/clear-partners-with-expedia-to-bring-a-more-seamless), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement), [CLEAR MIA Concierge launch](https://ir.clearme.com/news-events/press-releases/detail/189/concierge-powered-by-clear-launched-at-mia-to-elevate), [CLEAR Indianapolis launch](https://ir.clearme.com/news-events/press-releases/detail/190/clear-launches-at-indianapolis-international-airport)
 
 ### `VCEL` - Vericel
 
@@ -299,6 +302,7 @@ Recent evidence:
 - Management guided Q2 2026 sales to $195M-$215M with 38%-40% gross margin.
 - Management cited healthy networking and data infrastructure demand, improving datacenter connectivity momentum, and high-performance compute tied to AI-driven investment.
 - The March 2026 dataMate acquisition adds customers and data-solutions capability.
+- Bel priced an upsized public offering of 1.5M Class B shares at $266 per share on May 13, 2026 for expected gross proceeds of about $399M, with intended uses including debt repayment, funding the remaining 20% Enercon acquisition, acquisition or partnership opportunities, and general corporate purposes; this can reduce balance-sheet risk but adds dilution and use-of-proceeds execution to monitor.
 
 Why it may be less noticed:
 
@@ -309,6 +313,7 @@ Key risks:
 - Component-cycle volatility.
 - Tariff and supply-chain exposure.
 - China and Israel operating/geopolitical risk.
+- Share-count dilution and use-of-proceeds execution after the May 2026 Class B offering.
 - Acquisition integration.
 - Customer concentration.
 
@@ -317,9 +322,9 @@ What to monitor:
 - Q2 sales versus guidance.
 - Gross margin sustainability near 38%-40%.
 - Datacenter and defense backlog commentary.
-- Net debt after acquisitions.
+- Share count, use of offering proceeds, and net debt after acquisitions.
 
-Source: [Bel Fuse Q1 2026 results](https://ir.belfuse.com/node/18386/pdf)
+Sources: [Bel Fuse Q1 2026 results](https://ir.belfuse.com/node/18386/pdf), [Bel Fuse Class B offering](https://ir.belfuse.com/news-releases/news-release-details/bel-fuse-inc-announces-pricing-upsized-public-offering-class-b)
 
 ## Sector Themes Behind the Watchlist
 
