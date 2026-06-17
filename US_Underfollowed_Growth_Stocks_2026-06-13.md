@@ -1,6 +1,6 @@
 # U.S. Underfollowed Growth Stock Research Note
 
-Date: 2026-06-17
+Date: 2026-06-18
 Scope: U.S.-listed public companies with plausible high-growth potential that are smaller or less mainstream than the obvious mega-cap AI/software names.  
 Use: Research watchlist only. This is not personal financial advice, a valuation model, or a buy/sell recommendation.
 
@@ -16,20 +16,20 @@ The list deliberately avoids the most crowded AI winners where expectations are 
 
 ## Market Data Snapshot
 
-Market data below reflects Nasdaq delayed quote and summary endpoint values retrieved on 2026-06-17 in Asia/Hong_Kong. The endpoints showed U.S. market status After-Hours, primary-data timestamps around Jun 16, 2026 7:39-7:40 PM ET, and regular-session close timestamps of Jun 16, 2026 at 4:00 PM ET for the maintained tickers; the table uses regular-session close prices and Nasdaq summary market-cap values, not after-hours last-sale prices. Refresh prices, market caps, short interest, filings, guidance, and news again before any action, especially after the June 17, 2026 U.S. session opens.
+Market data below reflects Nasdaq delayed quote and summary endpoint values retrieved on 2026-06-18 in Asia/Hong_Kong. The endpoints showed U.S. market status After-Hours, primary-data timestamps around Jun 17, 2026 7:31-7:32 PM ET, and regular-session close timestamps of Jun 17, 2026 at 4:00 PM ET for the maintained tickers; the table uses regular-session close prices and Nasdaq summary market-cap values, not after-hours last-sale prices. Refresh prices, market caps, short interest, filings, guidance, and news again before any action, especially after the June 18, 2026 U.S. session opens.
 
-Market-data source check: Nasdaq delayed quote and summary endpoints retrieved on 2026-06-17; cross-check live quote pages before taking action, for example [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
+Market-data source check: Nasdaq delayed quote and summary endpoints retrieved on 2026-06-18; cross-check live quote pages before taking action, for example [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
 
 | Ticker | Company | Price | Market Cap | Broad Category |
 |---|---:|---:|---:|---|
-| `ALKT` | Alkami Technology | $15.55 | ~$1.66B | Digital banking SaaS |
-| `TARS` | Tarsus Pharmaceuticals | $60.80 | ~$2.62B | Commercial-stage ophthalmology pharma |
-| `GENI` | Genius Sports | $6.88 | ~$1.77B | Sports data, betting, and media technology |
-| `YOU` | Clear Secure | $52.76 | ~$7.05B | Identity/security platform |
-| `VCEL` | Vericel | $38.46 | ~$1.96B | Advanced therapy / medtech |
-| `CECO` | CECO Environmental | $92.55 | ~$5.41B | Industrial environmental and power infrastructure |
-| `WLDN` | Willdan Group | $93.99 | ~$1.42B | Energy efficiency and infrastructure services |
-| `BELFB` | Bel Fuse | $293.22 | ~$3.73B | Electronics, defense, data infrastructure |
+| `ALKT` | Alkami Technology | $15.09 | ~$1.61B | Digital banking SaaS |
+| `TARS` | Tarsus Pharmaceuticals | $62.55 | ~$2.69B | Commercial-stage ophthalmology pharma |
+| `GENI` | Genius Sports | $6.20 | ~$1.59B | Sports data, betting, and media technology |
+| `YOU` | Clear Secure | $50.81 | ~$6.79B | Identity/security platform |
+| `VCEL` | Vericel | $39.13 | ~$2.00B | Advanced therapy / medtech |
+| `CECO` | CECO Environmental | $94.46 | ~$5.52B | Industrial environmental and power infrastructure |
+| `WLDN` | Willdan Group | $92.68 | ~$1.40B | Energy efficiency and infrastructure services |
+| `BELFB` | Bel Fuse | $299.84 | ~$3.81B | Electronics, defense, data infrastructure |
 
 ## Selection Criteria
 
@@ -57,7 +57,8 @@ Recent evidence:
 - Adjusted EBITDA was $22.3M, versus $12.1M a year earlier.
 - FY2026 revenue guidance is $527.1M-$530.9M.
 - The board authorized a $100M share repurchase program, adding a capital-allocation signal alongside the growth thesis.
-- The June 17 HK source check found Alkami's June 10, 2026 FDX API integration with Yodlee as the latest IR-page item; management framed it as a move toward credential-free, consent-based data sharing, fewer login disruptions, and stronger security.
+- The June 18 HK source check found Alkami's June 17, 2026 Dupaco/MANTL case study as the latest IR-page item; the release reported a 300% increase in new retail member accounts opened online, more than $138M of deposits raised, and more than 4,194 staff hours saved.
+- Alkami's June 10, 2026 FDX API integration with Yodlee remains relevant; management framed it as a move toward credential-free, consent-based data sharing, fewer login disruptions, and stronger security.
 
 Why it may be less noticed:
 
@@ -76,8 +77,9 @@ What to monitor:
 - GAAP loss trend and stock-based compensation.
 - Large-bank or credit-union customer wins.
 - FDX/API adoption and whether integration breadth improves user activation or retention.
+- MANTL customer proof points converting into repeatable account-opening wins, not just isolated case studies.
 
-Sources: [Alkami Q1 2026 results](https://investors.alkami.com/2026-04-29-Alkami-Announces-First-Quarter-2026-Financial-Results), [Alkami FDX/Yodlee integration](https://investors.alkami.com/2026-06-10-Alkami-Strengthens-Open-Banking-Through-API-Integration-with-FDX-and-Yodlee)
+Sources: [Alkami Q1 2026 results](https://investors.alkami.com/2026-04-29-Alkami-Announces-First-Quarter-2026-Financial-Results), [Alkami FDX/Yodlee integration](https://investors.alkami.com/2026-06-10-Alkami-Strengthens-Open-Banking-Through-API-Integration-with-FDX-and-Yodlee), [Alkami Dupaco/MANTL case study](https://investors.alkami.com/2026-06-17-Dupaco-Community-Credit-Union-Achieves-300-Increase-in-New-Retail-Member-Accounts-Opened-Online-and-Raises-138-Million-in-Deposits-with-MANTL)
 
 ### `TARS` - Tarsus Pharmaceuticals
 
@@ -89,7 +91,8 @@ Recent evidence:
 - Management reaffirmed FY2026 XDEMVY net product sales guidance of $670M-$700M.
 - Management continues to state peak sales potential above $2B.
 - Nearly half of core eye care professionals are prescribing XDEMVY weekly.
-- Tarsus' presentations page still listed the June 12, 2026 corporate presentation as the latest deck during the June 17 HK source check; the deck shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
+- Tarsus' presentations page still listed the June 12, 2026 corporate presentation as the latest deck during the June 18 HK source check; the deck shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
+- Tarsus' financial filings page listed June 17 Form 4 filings and a Form 144; treat these as insider-activity monitoring items rather than a new operating update.
 - The company initiated a Phase 2 trial for TP-05, an oral tablet being studied for potential Lyme disease prevention, with topline data expected in H1 2027.
 
 Why it may be less noticed:
@@ -102,6 +105,7 @@ Key risks:
 - Reimbursement and patient affordability.
 - Competition or slower-than-expected category adoption.
 - Pharma valuation can reset sharply if sales momentum decelerates.
+- Insider-sale headlines can pressure sentiment even when they do not change the XDEMVY commercialization thesis.
 
 What to monitor:
 
@@ -109,8 +113,9 @@ What to monitor:
 - Gross-to-net discounts.
 - Profitability timeline.
 - Pipeline updates for TP-04 and TP-05.
+- Form 4/Form 144 cadence, share count, stock-based compensation, and financing activity.
 
-Sources: [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/), [Tarsus presentations](https://ir.tarsusrx.com/events-and-presentations/presentations/), [Tarsus news and presentations](https://ir.tarsusrx.com/news-presentations/)
+Sources: [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/), [Tarsus presentations](https://ir.tarsusrx.com/events-and-presentations/presentations/), [Tarsus news and presentations](https://ir.tarsusrx.com/news-presentations/), [Tarsus financial filings](https://ir.tarsusrx.com/financial-information)
 
 ### `GENI` - Genius Sports
 
