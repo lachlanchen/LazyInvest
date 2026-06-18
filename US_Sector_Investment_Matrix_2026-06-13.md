@@ -1,7 +1,7 @@
 # U.S. Sector Investment Matrix
 
-Date: 2026-06-18
-Market data context: Research refreshed on 2026-06-18 in Asia/Hong_Kong. Nasdaq delayed quote and summary endpoints retrieved during this pass showed U.S. market status After-Hours, primary-data timestamps around Jun 17, 2026 7:31-7:32 PM ET, and regular-session close timestamps of Jun 17, 2026 for maintained tickers; refresh prices, market caps, short interest, guidance, and news again before taking action, especially after the June 18, 2026 U.S. session opens.
+Date: 2026-06-19
+Market data context: Research refreshed on 2026-06-19 in Asia/Hong_Kong. Nasdaq delayed quote and summary endpoints retrieved during this pass showed U.S. market status After-Hours, primary-data timestamps around Jun 18, 2026 7:32 PM ET, and regular-session close timestamps of Jun 18, 2026 for maintained tickers; refresh prices, market caps, short interest, guidance, filings, and news again before taking action, especially after the June 19, 2026 U.S. session opens.
 Scope: U.S.-listed stocks and ADR-accessible companies where relevant.  
 Use: Research watchlist only. This is not personal financial advice or a buy/sell instruction.
 
@@ -88,7 +88,7 @@ Hot and still good:
 Less noticed and good:
 
 - `CECO`: Industrial air, water, emissions, and power/thermal infrastructure. Q1 2026 orders were $449.5M, up 97%; backlog was $1.035B, up 72%. CECO closed the Thermon acquisition on June 1, 2026, and the June 9 combined-company outlook calls for 2026 revenue of $1.275B-$1.375B, non-GAAP adjusted EBITDA of $195M-$225M, and free cash flow of at least 55% of adjusted EBITDA. Sources: [CECO Q1 2026 results](https://www.globenewswire.com/news-release/2026/04/28/3282406/0/en/ceco-environmental-reports-first-quarter-2026-results.html), [CECO Thermon post-close update](https://www.globenewswire.com/news-release/2026/06/09/3308707/0/en/ceco-environmental-provides-post-closing-update-on-thermon-transaction.html)
-- `WLDN`: Energy efficiency and infrastructure services. FY2026 targets include $410M-$425M net revenue and $100M-$105M adjusted EBITDA. The Burton acquisition adds commercial energy/procurement capability and was described as accretive to 2026 adjusted EPS. Sources: [Willdan Q1 2026 results](https://ir.willdangroup.com/news-releases/news-release-details/willdan-group-reports-first-quarter-results-2), [Willdan Burton acquisition](https://www.willdan.com/newsdetail?NewsID=willdan-expands-commercial-energy-capabilities-with-acquisition-of-burton-energy-group)
+- `WLDN`: Energy efficiency and infrastructure services. FY2026 targets include $410M-$425M net revenue and $100M-$105M adjusted EBITDA. The Burton acquisition adds commercial energy/procurement capability and was described as accretive to 2026 adjusted EPS. A June 18, 2026 Form 8-K disclosed annual-meeting results and stockholder approval of an amended 2008 Performance Incentive Plan adding 380,000 shares to the award reserve; this is not an operating-update change, but it adds an equity-plan dilution and stock-based-compensation monitor. Sources: [Willdan Q1 2026 results](https://ir.willdangroup.com/news-releases/news-release-details/willdan-group-reports-first-quarter-results-2), [Willdan Burton acquisition](https://www.willdan.com/newsdetail?NewsID=willdan-expands-commercial-energy-capabilities-with-acquisition-of-burton-energy-group), [Willdan June 18, 2026 Form 8-K](https://www.sec.gov/Archives/edgar/data/1370450/000110465926075795/wldn-20260617x8k.htm)
 - `BELFB`: Component exposure to datacenter, defense, and high-performance compute, with the May 2026 Class B offering now an explicit dilution/use-of-proceeds item to monitor. Sources: [Bel Fuse Q1 2026 results](https://ir.belfuse.com/node/18386/pdf), [Bel Fuse Class B offering](https://ir.belfuse.com/news-releases/news-release-details/bel-fuse-inc-announces-pricing-upsized-public-offering-class-b)
 
 Avoid / very unattractive:
@@ -108,6 +108,7 @@ What to monitor:
 - Backlog quality, not just backlog size.
 - Gross margin on backlog conversion.
 - CECO/Thermon integration, synergy realization, and acquisition-related leverage.
+- Willdan equity-plan dilution, stock-based compensation, and Burton integration.
 - Nuclear restart/regulatory timelines.
 
 ### 3. Cybersecurity, Identity, and Data Protection
@@ -148,7 +149,7 @@ Hot and still good:
 
 Less noticed and good:
 
-- `TARS`: XDEMVY commercial ramp remains strong. Q1 2026 sales were $145.4M, up more than 85%; FY2026 guidance was $670M-$700M. The June 18 HK source check still found the June 12, 2026 corporate presentation as the latest investor deck; June 17 Form 4/144 filings are an insider-activity monitor rather than a new operating update. Sources: [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/), [Tarsus presentations](https://ir.tarsusrx.com/events-and-presentations/presentations/), [Tarsus financial filings](https://ir.tarsusrx.com/financial-information)
+- `TARS`: XDEMVY commercial ramp remains strong. Q1 2026 sales were $145.4M, up more than 85%; FY2026 guidance was $670M-$700M. The June 19 HK source check still found the June 12, 2026 corporate presentation as the latest investor deck; SEC submissions still showed June 17 Form 4/144 filings as insider-activity monitors rather than a new operating update. Sources: [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/), [Tarsus presentations](https://ir.tarsusrx.com/events-and-presentations/presentations/), [Tarsus financial filings](https://ir.tarsusrx.com/financial-information)
 - `VCEL`: Specialized medtech/advanced therapy. Q1 2026 revenue was $68.4M, up 30%; gross margin was 72%; free cash flow was positive; no debt; guidance was raised. Source: [Vericel Q1 2026 results](https://investors.vcel.com/news-releases/news-release-details/vericel-reports-first-quarter-2026-financial-results-and-raises)
 - `TMDX`: Organ transplant platform. Q1 2026 revenue was $173.9M, up 21%; cash was $461.7M. Risk: margins and operating income compressed as the company invests. Source: [TransMedics Q1 2026 results](https://investors.transmedics.com/news-releases/news-release-details/transmedics-reports-first-quarter-2026-financial-results/)
 - `LNTH`: Medical imaging and radiopharmaceuticals. Q1 2026 revenue was $377.3M, with GAAP diluted EPS of $1.80 and PYLARIFY TruVu FDA approval. Source: [Lantheus Q1 2026 results](https://investor.lantheus.com/news-releases/news-release-details/lantheus-reports-first-quarter-2026-financial-results-and)
