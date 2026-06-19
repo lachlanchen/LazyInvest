@@ -1,6 +1,6 @@
 # U.S. Underfollowed Growth Stock Research Note
 
-Date: 2026-06-19
+Date: 2026-06-20
 Scope: U.S.-listed public companies with plausible high-growth potential that are smaller or less mainstream than the obvious mega-cap AI/software names.  
 Use: Research watchlist only. This is not personal financial advice, a valuation model, or a buy/sell recommendation.
 
@@ -16,16 +16,16 @@ The list deliberately avoids the most crowded AI winners where expectations are 
 
 ## Market Data Snapshot
 
-Market data below reflects Nasdaq delayed quote and summary endpoint values retrieved on 2026-06-19 in Asia/Hong_Kong. The endpoints showed U.S. market status After-Hours, primary-data timestamps around Jun 18, 2026 7:32 PM ET, and regular-session close timestamps of Jun 18, 2026 at 4:00 PM ET for the maintained tickers; the table uses regular-session close prices and Nasdaq summary market-cap values, not after-hours last-sale prices. Refresh prices, market caps, short interest, filings, guidance, and news again before any action, especially after the June 19, 2026 U.S. session opens.
+Market data below reflects Nasdaq delayed quote, summary, and historical endpoint values retrieved on 2026-06-20 in Asia/Hong_Kong. Nasdaq and NYSE holiday schedules list Friday, June 19, 2026 as closed for Juneteenth, so there was no new regular U.S. equity trading session after the June 18 close. The Nasdaq endpoints showed U.S. market status Closed and latest regular-session historical rows dated Jun 18, 2026 for the maintained tickers; the table uses regular-session close prices and Nasdaq summary market-cap values. Refresh prices, market caps, short interest, filings, guidance, and news again before any action, especially after U.S. markets reopen on Monday, June 22, 2026.
 
-Market-data source check: Nasdaq delayed quote and summary endpoints retrieved on 2026-06-19; cross-check live quote pages before taking action, for example [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
+Market-data source check: Nasdaq delayed quote, summary, and historical endpoints retrieved on 2026-06-20; cross-check live quote pages and holiday schedules before taking action, including [Nasdaq holiday schedule](https://www.nasdaq.com/market-activity/stock-market-holiday-schedule), [NYSE holidays and trading hours](https://www.nyse.com/trade/hours-calendars), [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
 
 | Ticker | Company | Price | Market Cap | Broad Category |
 |---|---:|---:|---:|---|
 | `ALKT` | Alkami Technology | $14.68 | ~$1.57B | Digital banking SaaS |
 | `TARS` | Tarsus Pharmaceuticals | $63.16 | ~$2.72B | Commercial-stage ophthalmology pharma |
-| `GENI` | Genius Sports | $6.09 | ~$1.57B | Sports data, betting, and media technology |
-| `YOU` | Clear Secure | $51.38 | ~$6.87B | Identity/security platform |
+| `GENI` | Genius Sports | $6.10 | ~$1.57B | Sports data, betting, and media technology |
+| `YOU` | Clear Secure | $51.45 | ~$6.88B | Identity/security platform |
 | `VCEL` | Vericel | $40.10 | ~$2.05B | Advanced therapy / medtech |
 | `CECO` | CECO Environmental | $98.40 | ~$5.75B | Industrial environmental and power infrastructure |
 | `WLDN` | Willdan Group | $89.00 | ~$1.34B | Energy efficiency and infrastructure services |
@@ -57,7 +57,7 @@ Recent evidence:
 - Adjusted EBITDA was $22.3M, versus $12.1M a year earlier.
 - FY2026 revenue guidance is $527.1M-$530.9M.
 - The board authorized a $100M share repurchase program, adding a capital-allocation signal alongside the growth thesis.
-- The June 19 HK source check found Alkami's June 17, 2026 Dupaco/MANTL case study as the latest IR-page item; the release reported a 300% increase in new retail member accounts opened online, more than $138M of deposits raised, and more than 4,194 staff hours saved.
+- The June 20 HK source check found Alkami's June 17, 2026 Dupaco/MANTL case study as the latest IR-page item; the release reported a 300% increase in new retail member accounts opened online, more than $138M of deposits raised, and more than 4,194 staff hours saved.
 - Alkami's June 10, 2026 FDX API integration with Yodlee remains relevant; management framed it as a move toward credential-free, consent-based data sharing, fewer login disruptions, and stronger security.
 
 Why it may be less noticed:
@@ -91,7 +91,7 @@ Recent evidence:
 - Management reaffirmed FY2026 XDEMVY net product sales guidance of $670M-$700M.
 - Management continues to state peak sales potential above $2B.
 - Nearly half of core eye care professionals are prescribing XDEMVY weekly.
-- Tarsus' presentations page still listed the June 12, 2026 corporate presentation as the latest deck during the June 19 HK source check; the deck shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
+- Tarsus' presentations page still listed the June 12, 2026 corporate presentation as the latest deck during the June 20 HK source check; the deck shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
 - Tarsus' financial filings page and SEC submissions still listed June 17 Form 4 filings and a Form 144 as the latest activity; treat these as insider-activity monitoring items rather than a new operating update.
 - The company initiated a Phase 2 trial for TP-05, an oral tablet being studied for potential Lyme disease prevention, with topline data expected in H1 2027.
 
@@ -202,6 +202,7 @@ Recent evidence:
 - Free cash flow was $15.1M.
 - The company had about $211M in cash and investments and no debt.
 - FY2026 revenue guidance was raised to $326M-$336M.
+- Vericel's press-release page listed a June 9, 2026 Truist MedTech conference notice as the latest press release during the June 20 HK source check; this is not a new operating update after Q1 guidance.
 
 Why it may be less noticed:
 
@@ -221,7 +222,7 @@ What to monitor:
 - Adjusted EBITDA margin versus the company target.
 - International expansion progress.
 
-Source: [Vericel Q1 2026 results](https://investors.vcel.com/news-releases/news-release-details/vericel-reports-first-quarter-2026-financial-results-and-raises)
+Sources: [Vericel Q1 2026 results](https://investors.vcel.com/news-releases/news-release-details/vericel-reports-first-quarter-2026-financial-results-and-raises), [Vericel press releases](https://investors.vcel.com/press-releases)
 
 ### `CECO` - CECO Environmental
 
@@ -311,6 +312,7 @@ Recent evidence:
 - Management cited healthy networking and data infrastructure demand, improving datacenter connectivity momentum, and high-performance compute tied to AI-driven investment.
 - The March 2026 dataMate acquisition adds customers and data-solutions capability.
 - Bel priced an upsized public offering of 1.5M Class B shares at $266 per share on May 13, 2026 for expected gross proceeds of about $399M, with intended uses including debt repayment, funding the remaining 20% Enercon acquisition, acquisition or partnership opportunities, and general corporate purposes; this can reduce balance-sheet risk but adds dilution and use-of-proceeds execution to monitor.
+- Bel declared regular quarterly cash dividends on May 21, 2026, including $0.07 per Class B share payable July 31; this is a small cash-return signal, but the offering, acquisition funding, and share-count effects remain more important to the thesis.
 
 Why it may be less noticed:
 
@@ -322,6 +324,7 @@ Key risks:
 - Tariff and supply-chain exposure.
 - China and Israel operating/geopolitical risk.
 - Share-count dilution and use-of-proceeds execution after the May 2026 Class B offering.
+- Dividend sustainability if acquisition or component-cycle pressure rises.
 - Acquisition integration.
 - Customer concentration.
 
@@ -331,8 +334,9 @@ What to monitor:
 - Gross margin sustainability near 38%-40%.
 - Datacenter and defense backlog commentary.
 - Share count, use of offering proceeds, and net debt after acquisitions.
+- Dividend cadence versus cash conversion.
 
-Sources: [Bel Fuse Q1 2026 results](https://ir.belfuse.com/node/18386/pdf), [Bel Fuse Class B offering](https://ir.belfuse.com/news-releases/news-release-details/bel-fuse-inc-announces-pricing-upsized-public-offering-class-b)
+Sources: [Bel Fuse Q1 2026 results](https://ir.belfuse.com/node/18386/pdf), [Bel Fuse Class B offering](https://ir.belfuse.com/news-releases/news-release-details/bel-fuse-inc-announces-pricing-upsized-public-offering-class-b), [Bel Fuse dividend](https://ir.belfuse.com/news-releases/news-release-details/bel-fuse-inc-announces-regular-quarterly-cash-dividend-its-71)
 
 ## Sector Themes Behind the Watchlist
 
