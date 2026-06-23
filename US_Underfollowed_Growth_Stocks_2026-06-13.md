@@ -1,6 +1,6 @@
 # U.S. Underfollowed Growth Stock Research Note
 
-Date: 2026-06-23
+Date: 2026-06-24
 Scope: U.S.-listed public companies with plausible high-growth potential that are smaller or less mainstream than the obvious mega-cap AI/software names.  
 Use: Research watchlist only. This is not personal financial advice, a valuation model, or a buy/sell recommendation.
 
@@ -16,20 +16,20 @@ The list deliberately avoids the most crowded AI winners where expectations are 
 
 ## Market Data Snapshot
 
-Market data below reflects Nasdaq delayed quote and summary endpoint values retrieved on 2026-06-23 in Asia/Hong_Kong after the Monday, June 22, 2026 U.S. regular session closed. The table uses regular-session close prices from Nasdaq quote data and Nasdaq summary market-cap values, not after-hours ticks; Nasdaq showed market status After-Hours during the pull. Refresh prices, market caps, short interest, filings, guidance, and news again before taking action because the next U.S. regular session may not have opened yet from the Hong Kong date perspective.
+Market data below reflects Nasdaq delayed quote and summary endpoint values retrieved on 2026-06-24 in Asia/Hong_Kong after the Tuesday, June 23, 2026 U.S. regular session closed. The table uses regular-session close prices from Nasdaq quote `secondaryData` and Nasdaq summary market-cap values, not after-hours prints; Nasdaq showed market status After-Hours during the pull. Refresh prices, market caps, short interest, filings, guidance, and news again before taking action.
 
-Market-data source check: Nasdaq delayed quote and summary endpoints retrieved on 2026-06-23; cross-check live quote pages and exchange calendars before taking action, including [Nasdaq holiday schedule](https://www.nasdaq.com/market-activity/stock-market-holiday-schedule), [NYSE holidays and trading hours](https://www.nyse.com/trade/hours-calendars), [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
+Market-data source check: Nasdaq delayed quote and summary endpoints retrieved on 2026-06-24; cross-check live quote pages and exchange calendars before taking action, including [Nasdaq holiday schedule](https://www.nasdaq.com/market-activity/stock-market-holiday-schedule), [NYSE holidays and trading hours](https://www.nyse.com/trade/hours-calendars), [Nasdaq ALKT](https://www.nasdaq.com/market-activity/stocks/alkt), [Nasdaq TARS](https://www.nasdaq.com/market-activity/stocks/tars), [Nasdaq GENI](https://www.nasdaq.com/market-activity/stocks/geni), [Nasdaq YOU](https://www.nasdaq.com/market-activity/stocks/you), [Nasdaq VCEL](https://www.nasdaq.com/market-activity/stocks/vcel), [Nasdaq CECO](https://www.nasdaq.com/market-activity/stocks/ceco), [Nasdaq WLDN](https://www.nasdaq.com/market-activity/stocks/wldn), and [Nasdaq BELFB](https://www.nasdaq.com/market-activity/stocks/belfb).
 
 | Ticker | Company | Price | Market Cap | Broad Category |
 |---|---:|---:|---:|---|
-| `ALKT` | Alkami Technology | $14.59 | ~$1.56B | Digital banking SaaS |
-| `TARS` | Tarsus Pharmaceuticals | $63.56 | ~$2.73B | Commercial-stage ophthalmology pharma |
-| `GENI` | Genius Sports | $5.94 | ~$1.53B | Sports data, betting, and media technology |
-| `YOU` | Clear Secure | $51.97 | ~$6.95B | Identity/security platform |
-| `VCEL` | Vericel | $40.47 | ~$2.07B | Advanced therapy / medtech |
-| `CECO` | CECO Environmental | $99.67 | ~$5.83B | Industrial environmental and power infrastructure |
-| `WLDN` | Willdan Group | $83.00 | ~$1.25B | Energy efficiency and infrastructure services |
-| `BELFB` | Bel Fuse | $304.33 | ~$3.87B | Electronics, defense, data infrastructure |
+| `ALKT` | Alkami Technology | $15.05 | ~$1.61B | Digital banking SaaS |
+| `TARS` | Tarsus Pharmaceuticals | $66.17 | ~$2.85B | Commercial-stage ophthalmology pharma |
+| `GENI` | Genius Sports | $5.855 | ~$1.51B | Sports data, betting, and media technology |
+| `YOU` | Clear Secure | $52.71 | ~$7.04B | Identity/security platform |
+| `VCEL` | Vericel | $40.39 | ~$2.06B | Advanced therapy / medtech |
+| `CECO` | CECO Environmental | $96.67 | ~$5.65B | Industrial environmental and power infrastructure |
+| `WLDN` | Willdan Group | $82.29 | ~$1.24B | Energy efficiency and infrastructure services |
+| `BELFB` | Bel Fuse | $288.64 | ~$3.67B | Electronics, defense, data infrastructure |
 
 ## Selection Criteria
 
@@ -57,7 +57,7 @@ Recent evidence:
 - Adjusted EBITDA was $22.3M, versus $12.1M a year earlier.
 - FY2026 revenue guidance is $527.1M-$530.9M.
 - The board authorized a $100M share repurchase program, adding a capital-allocation signal alongside the growth thesis.
-- The June 23 HK source check still found Alkami's June 17, 2026 Dupaco/MANTL case study as the latest IR-page item; the release reported a 300% increase in new retail member accounts opened online, more than $138M of deposits raised, and more than 4,194 staff hours saved.
+- The June 24 HK source check still found Alkami's June 17, 2026 Dupaco/MANTL case study as the latest IR-page item; the release reported a 300% increase in new retail member accounts opened online, more than $138M of deposits raised, and more than 4,194 staff hours saved.
 - Alkami's June 10, 2026 FDX API integration with Yodlee remains relevant; management framed it as a move toward credential-free, consent-based data sharing, fewer login disruptions, and stronger security.
 
 Why it may be less noticed:
@@ -91,8 +91,8 @@ Recent evidence:
 - Management reaffirmed FY2026 XDEMVY net product sales guidance of $670M-$700M.
 - Management continues to state peak sales potential above $2B.
 - Nearly half of core eye care professionals are prescribing XDEMVY weekly.
-- Tarsus' presentations page still listed the June 12, 2026 corporate presentation as the latest deck during the June 23 HK source check; the deck shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
-- Tarsus' news page still listed May 28 investor-conference participation as the latest news release during the June 23 HK source check; financial filings still showed June 17 Form 4 filings and a Form 144 as insider-activity monitoring items rather than a new operating update.
+- Tarsus' presentations page still listed the June 12, 2026 corporate presentation as the latest deck during the June 24 HK source check; the deck shows the $670M-$700M 2026 XDEMVY net-sales guide, the $2B+ peak-sales bridge, about 93% gross-margin target, and $388.7M cash and cash equivalents.
+- Tarsus' news page still listed May 28 investor-conference participation as the latest news release during the June 24 HK source check; SEC filings showed a June 22 Form 4 reporting two June 17 sales totaling 10,000 indirectly held shares by Bobak R. Azamian, an insider-activity monitoring item rather than a new operating update.
 - The company initiated a Phase 2 trial for TP-05, an oral tablet being studied for potential Lyme disease prevention, with topline data expected in H1 2027.
 
 Why it may be less noticed:
@@ -115,7 +115,7 @@ What to monitor:
 - Pipeline updates for TP-04 and TP-05.
 - Form 4/Form 144 cadence, share count, stock-based compensation, and financing activity.
 
-Sources: [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/), [Tarsus presentations](https://ir.tarsusrx.com/events-and-presentations/presentations/), [Tarsus news and presentations](https://ir.tarsusrx.com/news-presentations/), [Tarsus financial filings](https://ir.tarsusrx.com/financial-information)
+Sources: [Tarsus Q1 2026 results](https://ir.tarsusrx.com/news-releases/news-release-details/tarsus-reports-first-quarter-2026-financial-results-and-recent/), [Tarsus presentations](https://ir.tarsusrx.com/events-and-presentations/presentations/), [Tarsus news and presentations](https://ir.tarsusrx.com/news-presentations/), [Tarsus June 22, 2026 Form 4](https://www.sec.gov/Archives/edgar/data/1819790/000182767226000009/wk-form4_1782158996.xml), [Tarsus financial filings](https://ir.tarsusrx.com/financial-information)
 
 ### `GENI` - Genius Sports
 
@@ -127,7 +127,7 @@ Recent evidence:
 - The company closed the Legend acquisition on May 1, 2026.
 - FY2026 guidance was raised to $990M-$1.01B of revenue and $270M-$280M of adjusted EBITDA.
 - FY2026 adjusted EBITDA margin target increased to about 28% at the midpoint.
-- The June 23 HK source check found no newer Genius operating update after the May 7, 2026 Q1 release.
+- The June 24 HK source check found no newer Genius operating update after the May 7, 2026 Q1 release.
 
 Why it may be less noticed:
 
@@ -167,7 +167,8 @@ Recent evidence:
 - CLEAR and GDIT announced a strategic collaboration to deliver CLEAR1 identity-management and verification solutions to federal health and civilian agencies.
 - CLEAR launched Concierge Powered by CLEAR at Miami International Airport on June 1, 2026; pricing starts at $99 for departures and $199 for arrivals, and the MIA version is available to all travelers rather than only CLEAR+ members.
 - CLEAR launched at Indianapolis International Airport on June 16, 2026, adding CLEAR+ Lanes, eGates, and Concierge; the release said CLEAR now serves more than 8.2M Active CLEAR+ members at 62 airports and more than 41M total members.
-- The June 23 HK source check still found the Indianapolis launch as CLEAR's latest press release.
+- The June 24 HK source check still found the Indianapolis launch as CLEAR's latest press release.
+- CLEAR's June 23, 2026 Form 8-K amended the company's credit agreement: maturity was extended to June 23, 2031; lender commitments were reduced to $50M; the letter-of-credit sublimit increased to $50M; and stated term SOFR/base-rate margins plus the unused commitment fee were reduced. This is financing/liquidity evidence rather than a new operating growth catalyst.
 
 Why it may be less noticed:
 
@@ -187,8 +188,9 @@ What to monitor:
 - Airport rollout of eGates.
 - Expedia, Samsung Wallet, GDIT, MIA Concierge, and Indianapolis airport adoption evidence.
 - Any privacy/security incidents or regulatory actions.
+- Credit-facility usage, letter-of-credit obligations, and liquidity disclosures after the June 2026 amendment.
 
-Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Expedia partnership](https://ir.clearme.com/news-events/press-releases/detail/186/clear-partners-with-expedia-to-bring-a-more-seamless), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement), [CLEAR MIA Concierge launch](https://ir.clearme.com/news-events/press-releases/detail/189/concierge-powered-by-clear-launched-at-mia-to-elevate), [CLEAR Indianapolis launch](https://ir.clearme.com/news-events/press-releases/detail/190/clear-launches-at-indianapolis-international-airport), [CLEAR press releases](https://ir.clearme.com/news-events/press-releases)
+Sources: [Clear Secure Q1 2026 results](https://ir.clearme.com/news-events/press-releases/detail/184/clear-announces-first-quarter-2026-financial-results), [CLEAR Expedia partnership](https://ir.clearme.com/news-events/press-releases/detail/186/clear-partners-with-expedia-to-bring-a-more-seamless), [CLEAR Samsung Wallet partnership](https://ir.clearme.com/news-events/press-releases/detail/188/clear-partners-with-samsung-bringing-clear-id-to-samsung), [CLEAR-GDIT collaboration](https://ir.clearme.com/news-events/press-releases/detail/187/clear-and-gdit-announce-strategic-collaboration-agreement), [CLEAR MIA Concierge launch](https://ir.clearme.com/news-events/press-releases/detail/189/concierge-powered-by-clear-launched-at-mia-to-elevate), [CLEAR Indianapolis launch](https://ir.clearme.com/news-events/press-releases/detail/190/clear-launches-at-indianapolis-international-airport), [CLEAR June 23, 2026 Form 8-K](https://www.sec.gov/Archives/edgar/data/1856314/000095014226001859/eh260797127_8k.htm), [CLEAR press releases](https://ir.clearme.com/news-events/press-releases)
 
 ### `VCEL` - Vericel
 
@@ -204,7 +206,7 @@ Recent evidence:
 - Free cash flow was $15.1M.
 - The company had about $211M in cash and investments and no debt.
 - FY2026 revenue guidance was raised to $326M-$336M.
-- Vericel's press-release page listed a June 9, 2026 Truist MedTech conference notice as the latest press release during the June 23 HK source check; this is not a new operating update after Q1 guidance.
+- Vericel's IR pages listed a June 9, 2026 Truist MedTech conference notice and June 16 event as the latest presentation/event items during the June 24 HK source check; SEC filings showed June 22 Form 4 filings for option exercises and same-day sales by Michael Halpin and Sean C. Flynn. These are insider-activity monitors, not new operating updates after Q1 guidance.
 
 Why it may be less noticed:
 
@@ -216,6 +218,7 @@ Key risks:
 - Reimbursement and hospital purchasing decisions.
 - Manufacturing complexity.
 - Valuation if growth slows.
+- Insider-sale headlines after option exercises or restricted-stock transactions.
 
 What to monitor:
 
@@ -223,8 +226,9 @@ What to monitor:
 - Burn-care revenue sustainability.
 - Adjusted EBITDA margin versus the company target.
 - International expansion progress.
+- Form 4/Form 144 cadence and share-based compensation.
 
-Sources: [Vericel Q1 2026 results](https://investors.vcel.com/news-releases/news-release-details/vericel-reports-first-quarter-2026-financial-results-and-raises), [Vericel press releases](https://investors.vcel.com/press-releases)
+Sources: [Vericel Q1 2026 results](https://investors.vcel.com/news-releases/news-release-details/vericel-reports-first-quarter-2026-financial-results-and-raises), [Vericel events](https://investors.vcel.com/events-presentations), [Vericel June 22, 2026 Form 4 - Halpin](https://www.sec.gov/Archives/edgar/data/887359/000114036126025952/form4.xml), [Vericel June 22, 2026 Form 4 - Flynn](https://www.sec.gov/Archives/edgar/data/887359/000114036126025951/form4.xml), [Vericel press releases](https://investors.vcel.com/press-releases)
 
 ### `CECO` - CECO Environmental
 
@@ -241,7 +245,7 @@ Recent evidence:
 - CECO completed the Thermon acquisition on June 1, 2026.
 - CECO's June 9 combined-company outlook calls for FY2026 revenue of $1.275B-$1.375B, non-GAAP adjusted EBITDA of $195M-$225M, and free cash flow of at least 55% of adjusted EBITDA; the guide includes seven months of Thermon contribution.
 - Management says it remains confident in $40M or more of cost synergies, but this is now a major execution item, not only upside optionality.
-- The June 23 HK source check still found the June 9 Thermon post-close update as CECO's latest news release.
+- The June 24 HK source check still found the June 9 Thermon post-close update as CECO's latest news release.
 
 Why it may be less noticed:
 
@@ -277,7 +281,7 @@ Recent evidence:
 - FY2026 targets are $410M-$425M net revenue, $100M-$105M adjusted EBITDA, and $4.90-$5.05 adjusted diluted EPS.
 - Long-term goals call for 15%-20% annual growth including acquisitions and high-20s adjusted EBITDA-to-net-revenue margin.
 - Willdan acquired Burton Energy Group on May 4, 2026; Burton reported about $103M of 2025 contract revenue, $15M of net revenue, and $7M of EBITDA, and management said the deal should be accretive to 2026 adjusted EPS.
-- The June 23 HK SEC/IR check still showed June 18, 2026 Form 8-K and Form 4 filings as Willdan's latest listed filings, while the IR event calendar listed a June 1, 2026 investor presentation as the latest event item. The 8-K disclosed annual-meeting results and stockholder approval of an amended 2008 Performance Incentive Plan, including 380,000 additional shares in the award reserve; this does not change operating guidance, but it adds a dilution and stock-based-compensation monitor.
+- The June 24 HK SEC/IR check still showed June 18, 2026 Form 8-K and Form 4 filings as Willdan's latest listed filings, while the IR event calendar listed a June 1, 2026 investor presentation as the latest event item. The 8-K disclosed annual-meeting results and stockholder approval of an amended 2008 Performance Incentive Plan, including 380,000 additional shares in the award reserve; this does not change operating guidance, but it adds a dilution and stock-based-compensation monitor.
 
 Why it may be less noticed:
 
@@ -316,7 +320,7 @@ Recent evidence:
 - The March 2026 dataMate acquisition adds customers and data-solutions capability.
 - Bel priced an upsized public offering of 1.5M Class B shares at $266 per share on May 13, 2026 for expected gross proceeds of about $399M, with intended uses including debt repayment, funding the remaining 20% Enercon acquisition, acquisition or partnership opportunities, and general corporate purposes; this can reduce balance-sheet risk but adds dilution and use-of-proceeds execution to monitor.
 - Bel declared regular quarterly cash dividends on May 21, 2026, including $0.07 per Class B share payable July 31; this is a small cash-return signal, but the offering, acquisition funding, and share-count effects remain more important to the thesis.
-- The June 23 HK source check still found the May 21 dividend as Bel's latest press release.
+- The June 24 HK source check still found the May 21 dividend as Bel's latest press release.
 
 Why it may be less noticed:
 
