@@ -1,6 +1,6 @@
 # Best Growth Choice History
 
-Date: 2026-06-25
+Date: 2026-06-26
 
 Use: Research watchlist history only. This is not personal financial advice or a buy/sell recommendation.
 
@@ -20,6 +20,7 @@ Use: Research watchlist history only. This is not personal financial advice or a
 | 2026-06-23 | `TARS` | Tarsus Pharmaceuticals | $63.56 | ~$2.73B | BEST HUGE-GROWTH CHOICE | Q1 2026 XDEMVY net product sales were $145.4M, up more than 85% year over year. Among the watchlist names, `TARS` still combines the clearest near-term revenue acceleration, a very large product-sales target relative to current scale, and source-verifiable commercial adoption. The tradeoff is high product-concentration risk. | +0.6% since 2026-06-22 | [Best choice note](US_Best_Growth_Choice_2026-06-13.md) |
 | 2026-06-24 | `TARS` | Tarsus Pharmaceuticals | $66.17 | ~$2.85B | BEST HUGE-GROWTH CHOICE | Q1 2026 XDEMVY net product sales were $145.4M, up more than 85% year over year. Among the watchlist names, `TARS` still combines the clearest near-term revenue acceleration, a very large product-sales target relative to current scale, and source-verifiable commercial adoption. The tradeoff is high product-concentration risk. | +4.1% since 2026-06-23 | [Best choice note](US_Best_Growth_Choice_2026-06-13.md) |
 | 2026-06-25 | `TARS` | Tarsus Pharmaceuticals | $67.11 | ~$2.89B | BEST HUGE-GROWTH CHOICE | Q1 2026 XDEMVY net product sales were $145.4M, up more than 85% year over year. Among the watchlist names, `TARS` still combines the clearest near-term revenue acceleration, a very large product-sales target relative to current scale, and source-verifiable commercial adoption. The tradeoff is high product-concentration risk. | +1.4% since 2026-06-24 | [Best choice note](US_Best_Growth_Choice_2026-06-13.md) |
+| 2026-06-26 | `TARS` | Tarsus Pharmaceuticals | $64.34 | ~$2.77B | BEST HUGE-GROWTH CHOICE | Q1 2026 XDEMVY net product sales were $145.4M, up more than 85% year over year. Among the watchlist names, `TARS` still combines the clearest near-term revenue acceleration, a very large product-sales target relative to current scale, and source-verifiable commercial adoption. The tradeoff is high product-concentration risk. | -4.1% since 2026-06-25 | [Best choice note](US_Best_Growth_Choice_2026-06-13.md) |
 
 ## Maintenance Rule
 
