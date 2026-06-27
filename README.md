@@ -8,6 +8,7 @@
 
 [![Website](https://img.shields.io/badge/Website-earn.lazying.art-0EA5E9?style=for-the-badge)](https://earn.lazying.art)
 [![Research](https://img.shields.io/badge/Research-Markdown-111827?style=for-the-badge&logo=markdown&logoColor=white)](US_Sector_Investment_Matrix_2026-06-13.md)
+[![Daily Reports](https://img.shields.io/badge/Daily_Reports-PDF_Archive-2563EB?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lachlanchen/LazyInvestReports)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-lachlanchen-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/lachlanchen)
 
 ![LazyInvest Studio screenshot](figs/lazyinvest-studio.png)
@@ -46,6 +47,7 @@ flowchart LR
 | [US_Best_Growth_History.md](US_Best_Growth_History.md) | Calendar history of the selected best huge-growth choice, including price snapshot and recorded change. |
 | [US_Stock_Research_Table_2026-06-13.md](US_Stock_Research_Table_2026-06-13.md) | Maintained stock table used by LazyInvest Studio hover details and the stock canvas. |
 | [US_Underfollowed_Growth_Stocks_2026-06-13.md](US_Underfollowed_Growth_Stocks_2026-06-13.md) | Focused watchlist of less-noticed U.S. growth companies with catalysts and risks. |
+| [LazyInvestReports](https://github.com/lachlanchen/LazyInvestReports) | Separate daily report archive with Markdown, LaTeX, PDF, and public-data input bundles. |
 | [AGENTS.md](AGENTS.md) | Local working rules for future research updates. |
 | [CITATION.cff](CITATION.cff) | Citation metadata used by GitHub's **Cite this repository** panel. |
 | [.github/FUNDING.yml](.github/FUNDING.yml) | Enables the GitHub Sponsor button and external support links. |
@@ -92,7 +94,7 @@ Install it as a daily cron job:
 scripts/run_daily_lazyinvest_research.sh --install-cron --cron-time 07:30
 ```
 
-The default timezone is `Asia/Hong_Kong`. The runner uses `gpt-5.5 / xhigh`, refuses to start on a dirty worktree, records daily state under ignored `data/daily-research/`, updates the best-pick history, refreshes [figs/lazyinvest-studio.png](figs/lazyinvest-studio.png), and stages only LazyInvest research Markdown/settings/screenshot files before committing. Cron must be able to find `codex`, `python3`, Chrome/Chromium, and the repo's git credentials. Use `--force` for a second manual run on the same date or `--dry-run` to check setup without launching Codex.
+The default timezone is `Asia/Hong_Kong`. The runner uses `gpt-5.5 / xhigh`, refuses to start on a dirty worktree, records daily state under ignored `data/daily-research/`, updates the best-pick history, refreshes [figs/lazyinvest-studio.png](figs/lazyinvest-studio.png), and then writes an independent daily Markdown/LaTeX/PDF report plus public-data bundle to the separate [LazyInvestReports](https://github.com/lachlanchen/LazyInvestReports) repo. Cron must be able to find `codex`, `python3`, Chrome/Chromium, LaTeX tooling, and the repo's git credentials. Use `--force` for a second manual run on the same date or `--dry-run` to check setup without launching Codex.
 
 ## Validation
 

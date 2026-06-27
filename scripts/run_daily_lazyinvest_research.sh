@@ -30,6 +30,9 @@ Environment:
   LAZYINVEST_UPDATE_SCREENSHOT     set to 0 to skip screenshot refresh
   LAZYINVEST_SCREENSHOT_PORT       local Studio port for screenshot (default: 8792)
   LAZYINVEST_SCREENSHOT_CANVAS     screenshot canvas tab (default: history)
+  LAZYINVEST_REPORTS_ENABLED       set to 0 to skip separate PDF report archive
+  LAZYINVEST_REPORTS_DIR           report repo path (default: ../LazyInvestReports)
+  LAZYINVEST_CRON_COMMAND          command used by --install-cron
 USAGE
 }
 
@@ -55,6 +58,8 @@ UPDATE_SCREENSHOT="${LAZYINVEST_UPDATE_SCREENSHOT:-1}"
 SCREENSHOT_PORT="${LAZYINVEST_SCREENSHOT_PORT:-8792}"
 SCREENSHOT_CANVAS="${LAZYINVEST_SCREENSHOT_CANVAS:-history}"
 SCREENSHOT_PATH="$ROOT_DIR/figs/lazyinvest-studio.png"
+REPORTS_ENABLED="${LAZYINVEST_REPORTS_ENABLED:-1}"
+REPORTS_DIR="${LAZYINVEST_REPORTS_DIR:-$ROOT_DIR/../LazyInvestReports}"
 FORCE=0
 DRY_RUN=0
 NO_PUSH=0
@@ -93,6 +98,20 @@ cron_path_value() {
     fi
   done
   printf '%s' "$value"
+}
+
+cron_command_path() {
+  if [[ -n "${LAZYINVEST_CRON_COMMAND:-}" ]]; then
+    printf '%s' "$LAZYINVEST_CRON_COMMAND"
+    return
+  fi
+
+  local tmux_wrapper="${HOME:-/home/lachlan}/scripts/lazyinvest_daily_analysis_tmux.sh"
+  if [[ -x "$tmux_wrapper" ]]; then
+    printf '%s' "$tmux_wrapper"
+  else
+    printf '%s' "$SCRIPT_PATH"
+  fi
 }
 
 validate_research_text() {
@@ -166,7 +185,7 @@ cron_line() {
     "$hour" \
     "$(quote_for_sh "$ROOT_DIR")" \
     "$(quote_for_sh "$(cron_path_value)")" \
-    "$(quote_for_sh "$SCRIPT_PATH")" \
+    "$(quote_for_sh "$(cron_command_path)")" \
     "$MARKER"
 }
 
@@ -275,7 +294,9 @@ $(sed -n '1,240p' "$ROOT_DIR/prompts/lazyinvest-research-agent.md")
 
 ## Daily Job
 
-- Deeply research current U.S. public-company and sector evidence using current primary sources whenever possible.
+- Treat this as an independent daily research run, not an incremental copy edit. Re-check the current market regime, rates/liquidity context, sector evidence, filings, company IR pages, guidance, catalysts, and risks before changing conclusions.
+- Deeply research current U.S. public-company and sector evidence using current primary sources whenever possible: SEC filings, company investor relations, earnings releases, transcripts when available, exchange/market data, FRED/Treasury/Federal Reserve data, and reputable market data.
+- Use command-line and internet tools to inspect current sources. Do not fabricate or infer stale market data. If a data point cannot be refreshed, state the limitation and keep the claim dated.
 - Refresh the maintained table in \`US_Sector_Investment_Matrix_2026-06-13.md\` under \`## Maintained Sector Table\`.
 - Refresh the maintained stock table in \`US_Stock_Research_Table_2026-06-13.md\` under \`## Maintained Stock Table\`.
 - Refresh the single best huge-growth choice note in \`US_Best_Growth_Choice_2026-06-13.md\`.
@@ -315,6 +336,22 @@ log "Codex job finished. Final response: $AGENT_OUTPUT"
 log "Updating best-choice history"
 python3 scripts/update_best_choice_history.py --date "$TODAY"
 capture_studio_screenshot
+
+if [[ "$REPORTS_ENABLED" == "0" ]]; then
+  log "Skipping separate report archive because LAZYINVEST_REPORTS_ENABLED=0."
+else
+  log "Generating independent LazyInvestReports daily archive"
+  report_args=(
+    --date "$TODAY"
+    --reports-dir "$REPORTS_DIR"
+    --model "$MODEL"
+    --reasoning "$REASONING"
+  )
+  if [[ "$NO_PUSH" -eq 1 ]]; then
+    report_args+=(--no-push)
+  fi
+  scripts/run_daily_lazyinvest_report.sh "${report_args[@]}"
+fi
 
 if [[ -n "$(git status --porcelain --untracked-files=all)" ]]; then
   log "Changed files after research:"
